@@ -1,0 +1,1 @@
+./sgemm -i matrix1.txt,matrix2.txt,matrix2t.txt

@@ -1,0 +1,290 @@
+//HEADER
+.version 1.4+
+.target sm_10, map_f64_to_f32
+//END HEADER
+
+
+//INSTRUCTIONS
+
+.const .u32 constant1_Z9mysgemmNTPKfiS0_iPfiiff[3] = {
+          0x000003ff, 0x00000080, 0x00000008
+};
+
+
+
+
+
+.entry  _Z9mysgemmNTPKfiS0_iPfiiff (
+	.param  .u64 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_A ,
+	.param  .s32 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_lda ,
+	.param  .u64 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_B ,
+	.param  .s32 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_ldb ,
+	.param  .u64 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_C ,
+	.param  .s32 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_ldc ,
+	.param  .s32 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_k ,
+	.param  .f32 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_alpha ,
+	.param  .f32 __cudaparm__Z9mysgemmNTPKfiS0_iPfiiff_beta )
+{
+	.reg .pred $p0;
+	.reg .u32 $o127;	
+	.reg .u32 $r124;
+	.reg .u32 $r16;
+	.reg .u32 $r17;
+	.reg .u32 $r9;
+	.reg .u32 $r18;	
+	.reg .u32 $r10;
+	.reg .u32 $r11;	
+	.reg .u32 $r0;
+	.reg .u32 $r19;
+	.reg .u32 $r12;
+	.reg .u32 $r13;
+	.reg .u32 $r3;
+	.reg .u32 $r14;
+	.reg .u32 $r15;
+	.reg .u32 $r20;
+	.reg .u32 $r8;		
+	.reg .u32 $r7;
+	.reg .u32 $r6;
+	.reg .u32 $r1;	
+	.reg .u32 $r5;
+	.reg .u32 $r4;	
+	.reg .u32 $r2;
+	.reg .u32 $r21;
+	.reg .u32 $r23;
+	.reg .u32 $r22;	
+	.reg .u32 $ofs1;
+	.reg .u32 $r24;
+	.reg .u32 $r25;
+	.reg .u32 $r26;	
+	.reg .u32 $ofs2;
+	.reg .pred $p1;
+	.reg .pred $p2;
+	.reg .pred $p3;
+	.reg .u32 $ofs0;
+
+	
+	set.le.s32.s32 $p0/$o127, s[0x003c], $r124;
+	mov.u32 $r16, $r124;
+	mov.u32 $r17, $r124;
+	mov.u32 $r9, $r124;
+	mov.u32 $r18, $r124;
+	mov.u32 $r10, $r124;
+	mov.u32 $r11, $r124;
+	and.u16 $r0.hi, $r0.hi, constant1_Z9mysgemmNTPKfiS0_iPfiiff[0x0000];
+	mov.u32 $r19, $r124;
+	mov.u32 $r12, $r124;
+	mov.u32 $r13, $r124;
+	cvt.u32.u16 $r3, $r0.hi;
+	mov.u32 $r14, $r124;
+	mov.u32 $r15, $r124;
+	cvt.u32.u16 $r20, $r0.lo;
+	mul.wide.u16 $r0, %ntid.x, $r3.lo;
+	mov.u32 $r8, $r124;
+	mov.u32 $r7, $r124;
+	mov.u32 $r6, $r124;
+	add.u32 $r1, $r20, $r0;
+	mov.u32 $r5, $r124;
+	mov.u32 $r4, $r124;
+	cvt.u32.u16 $r2, %ctaid.y;
+	mad.lo.u16 $r1, %ctaid.x, 0x00000080, $r1;
+	@$p0.ne bra l0x00000268;
+	mov.u32 $r0, s[0x0028];
+	mul.wide.u16 $r21, $r0.lo, $r3.hi;
+	mad.wide.u16 $r23, $r0.hi, $r3.lo, $r21;
+	shl.u32 $r21, $r3, 0x00000004;
+	shl.u32 $r22, $r2, 0x00000004;
+	shl.u32 $r23, $r23, 0x00000010;
+	add.half.u32 $r21, $r20, $r21;
+	add.half.u32 $r20, $r20, $r22;
+	mad.wide.u16 $r0, $r0.lo, $r3.lo, $r23;
+	shl.b32 $ofs1, $r21, 0x00000002;
+	add.u32 $r22, $r0, $r20;
+	shl.u32 $r20, s[0x0028], 0x00000003;
+	mov.u32 $r0, $r124;
+	shl.u32 $r21, s[0x0018], 0x00000003;
+	shl.u32 $r3, s[0x0018], 0x00000002;
+	mov.u32 $r23, $r124;
+	l0x00000140: shl.u32 $r24, $r22, 0x00000002;
+	add.u32 $r24, s[0x0020], $r24;
+	ld.global.u32 $r24, [$r24];
+	mov.u32 s[$ofs1+0x0048], $r24;
+	bar.sync 0x00000000;
+	add.u32 $r25, $r0, $r1;
+	mov.u32 $r24, 0x00000048;
+	shl.u32 $r26, $r25, 0x00000002;
+	shl.b32 $ofs2, $r24, 0x0;
+	mov.u32 $r25, $r124;
+	add.u32 $r24, s[0x0010], $r26;
+	l0x00000198: ld.global.u32 $r26, [$r24];
+	add.u32 $r25, $r25, 0x00000001;
+	mad.f32 $r16, s[$ofs2+=0x0004], $r26, $r16;
+	mad.f32 $r17, s[$ofs2+=0x0004], $r26, $r17;
+	mad.f32 $r9, s[$ofs2+=0x0004], $r26, $r9;
+	mad.f32 $r18, s[$ofs2+=0x0004], $r26, $r18;
+	mad.f32 $r10, s[$ofs2+=0x0004], $r26, $r10;
+	mad.f32 $r11, s[$ofs2+=0x0004], $r26, $r11;
+	mad.f32 $r19, s[$ofs2+=0x0004], $r26, $r19;
+	mad.f32 $r12, s[$ofs2+=0x0004], $r26, $r12;
+	mad.f32 $r13, s[$ofs2+=0x0004], $r26, $r13;
+	mad.f32 $r14, s[$ofs2+=0x0004], $r26, $r14;
+	mad.f32 $r15, s[$ofs2+=0x0004], $r26, $r15;
+	mad.f32 $r8, s[$ofs2+=0x0004], $r26, $r8;
+	mad.f32 $r7, s[$ofs2+=0x0004], $r26, $r7;
+	mad.f32 $r6, s[$ofs2+=0x0004], $r26, $r6;
+	mad.f32 $r5, s[$ofs2+=0x0004], $r26, $r5;
+	mad.f32 $r4, s[$ofs2+=0x0004], $r26, $r4;
+	set.ne.s32.s32 $p0/$o127, $r25, constant1_Z9mysgemmNTPKfiS0_iPfiiff[0x0008];
+	add.u32 $r24, $r3, $r24;
+	@$p0.ne bra l0x00000198;
+	bar.sync 0x00000000;
+	add.u32 $r23, $r23, 0x00000008;
+	set.gt.s32.s32 $p0/$o127, s[0x003c], $r23;
+	add.half.u32 $r0, $r21, $r0;
+	add.half.u32 $r22, $r20, $r22;
+	@$p0.ne bra l0x00000140;
+	l0x00000268: mov.u32 $r0, s[0x0038];
+	mul.wide.u16 $r3, $r0.lo, $r2.hi;
+	mad.wide.u16 $r3, $r0.hi, $r2.lo, $r3;
+	shl.u32 $r3, $r3, 0x00000010;
+	mad.wide.u16 $r0, $r0.lo, $r2.lo, $r3;
+	shl.u32 $r0, $r0, 0x00000004;
+	add.u32 $r1, $r0, $r1;
+	shl.u32 $r0, $r1, 0x00000002;
+	add.u32 $r3, s[0x0030], $r0;
+	ld.global.u32 $r0, [$r3];
+	mul.f32 $r16, s[0x0040], $r16;
+	add.u32 $r2, s[0x0038], $r1;
+	mad.f32 $r16, s[0x0044], $r0, $r16;
+	shl.u32 $r0, $r2, 0x00000002;
+	st.global.u32 [$r3], $r16;
+	add.u32 $r16, s[0x0030], $r0;
+	ld.global.u32 $r0, [$r16];
+	mul.f32 $r17, s[0x0040], $r17;
+	shl.u32 $r2, s[0x0038], 0x00000001;
+	add.u32 $r3, $r1, $r2;
+	mad.f32 $r17, s[0x0044], $r0, $r17;
+	shl.u32 $r0, $r3, 0x00000002;
+	st.global.u32 [$r16], $r17;
+	add.u32 $r16, s[0x0030], $r0;
+	ld.global.u32 $r0, [$r16];
+	mul.f32 $r9, s[0x0040], $r9;
+	add.half.u32 $r3, s[0x0038], $r2;
+	add.half.u32 $r3, $r1, $r3;
+	mad.f32 $r9, s[0x0044], $r0, $r9;
+	shl.u32 $r0, $r3, 0x00000002;
+	st.global.u32 [$r16], $r9;
+	add.u32 $r16, s[0x0030], $r0;
+	ld.global.u32 $r3, [$r16];
+	mul.f32 $r17, s[0x0040], $r18;
+	shl.u32 $r0, s[0x0038], 0x00000002;
+	add.u32 $r9, $r1, $r0;
+	mad.f32 $r17, s[0x0044], $r3, $r17;
+	shl.u32 $r3, $r9, 0x00000002;
+	st.global.u32 [$r16], $r17;
+	add.u32 $r16, s[0x0030], $r3;
+	ld.global.u32 $r3, [$r16];
+	mul.f32 $r10, s[0x0040], $r10;
+	add.half.u32 $r9, s[0x0038], $r0;
+	add.half.u32 $r9, $r1, $r9;
+	mad.f32 $r10, s[0x0044], $r3, $r10;
+	shl.u32 $r3, $r9, 0x00000002;
+	st.global.u32 [$r16], $r10;
+	add.u32 $r10, s[0x0030], $r3;
+	ld.global.u32 $r3, [$r10];
+	mul.f32 $r11, s[0x0040], $r11;
+	add.half.u32 $r9, $r0, $r2;
+	add.half.u32 $r9, $r1, $r9;
+	mad.f32 $r11, s[0x0044], $r3, $r11;
+	shl.u32 $r3, $r9, 0x00000002;
+	st.global.u32 [$r10], $r11;
+	add.u32 $r11, s[0x0030], $r3;
+	ld.global.u32 $r9, [$r11];
+	mul.f32 $r16, s[0x0040], $r19;
+	shl.u32 $r3, s[0x0038], 0x00000003;
+	add.half.u32 $r10, -s[0x0038], $r3;
+	add.half.u32 $r10, $r1, $r10;
+	mad.f32 $r16, s[0x0044], $r9, $r16;
+	shl.u32 $r9, $r10, 0x00000002;
+	st.global.u32 [$r11], $r16;
+	add.u32 $r11, s[0x0030], $r9;
+	ld.global.u32 $r9, [$r11];
+	mul.f32 $r12, s[0x0040], $r12;
+	add.u32 $r10, $r1, $r3;
+	mad.f32 $r12, s[0x0044], $r9, $r12;
+	shl.u32 $r9, $r10, 0x00000002;
+	st.global.u32 [$r11], $r12;
+	add.u32 $r11, s[0x0030], $r9;
+	ld.global.u32 $r9, [$r11];
+	mul.f32 $r12, s[0x0040], $r13;
+	add.half.u32 $r10, s[0x0038], $r3;
+	add.half.u32 $r10, $r1, $r10;
+	mad.f32 $r12, s[0x0044], $r9, $r12;
+	shl.u32 $r9, $r10, 0x00000002;
+	st.global.u32 [$r11], $r12;
+	add.u32 $r11, s[0x0030], $r9;
+	ld.global.u32 $r9, [$r11];
+	mul.f32 $r12, s[0x0040], $r14;
+	add.half.u32 $r10, $r3, $r2;
+	add.half.u32 $r10, $r1, $r10;
+	mad.f32 $r12, s[0x0044], $r9, $r12;
+	add.u32 $r9, $r3, $r0;
+	shl.u32 $r0, $r10, 0x00000002;
+	st.global.u32 [$r11], $r12;
+	mul.f32 $r13, s[0x0040], $r15;
+	mov.u32 $r10, 0x0000000b;
+	add.u32 $r12, s[0x0030], $r0;
+	ld.global.u32 $r3, [$r12];
+	mov.u32 $r0, s[0x0038];
+	mul.wide.u16 $r11, $r10.hi, $r0.lo;
+	mad.wide.u16 $r11, $r10.lo, $r0.hi, $r11;
+	shl.u32 $r11, $r11, 0x00000010;
+	mad.wide.u16 $r10, $r10.lo, $r0.lo, $r11;
+	add.u32 $r10, $r1, $r10;
+	mad.f32 $r11, s[0x0044], $r3, $r13;
+	shl.u32 $r3, $r10, 0x00000002;
+	st.global.u32 [$r12], $r11;
+	add.u32 $r10, s[0x0030], $r3;
+	ld.global.u32 $r3, [$r10];
+	mul.f32 $r11, s[0x0040], $r8;
+	add.u32 $r8, $r1, $r9;
+	mad.f32 $r9, s[0x0044], $r3, $r11;
+	shl.u32 $r3, $r8, 0x00000002;
+	st.global.u32 [$r10], $r9;
+	add.u32 $r9, s[0x0030], $r3;
+	ld.global.u32 $r3, [$r9];
+	mul.f32 $r10, s[0x0040], $r7;
+	mov.u32 $r7, 0x0000000d;
+	mul.wide.u16 $r8, $r0.lo, $r7.hi;
+	mad.wide.u16 $r8, $r0.hi, $r7.lo, $r8;
+	shl.u32 $r8, $r8, 0x00000010;
+	mad.wide.u16 $r0, $r0.lo, $r7.lo, $r8;
+	add.u32 $r0, $r1, $r0;
+	mad.f32 $r3, s[0x0044], $r3, $r10;
+	shl.u32 $r0, $r0, 0x00000002;
+	st.global.u32 [$r9], $r3;
+	add.u32 $r7, s[0x0030], $r0;
+	ld.global.u32 $r0, [$r7];
+	mul.f32 $r6, s[0x0040], $r6;
+	shl.u32 $r3, s[0x0038], 0x00000004;
+	add.half.u32 $r2, -$r2, $r3;
+	add.half.u32 $r2, $r1, $r2;
+	mad.f32 $r6, s[0x0044], $r0, $r6;
+	shl.u32 $r0, $r2, 0x00000002;
+	add.u32 $r2, -s[0x0038], $r3;
+	st.global.u32 [$r7], $r6;
+	add.u32 $r3, s[0x0030], $r0;
+	ld.global.u32 $r0, [$r3];
+	add.u32 $r1, $r1, $r2;
+	mul.f32 $r2, s[0x0040], $r5;
+	mad.f32 $r2, s[0x0044], $r0, $r2;
+	shl.u32 $r0, $r1, 0x00000002;
+	st.global.u32 [$r3], $r2;
+	add.u32 $r1, s[0x0030], $r0;
+	ld.global.u32 $r0, [$r1];
+	mul.f32 $r2, s[0x0040], $r4;
+	mad.f32 $r0, s[0x0044], $r0, $r2;
+	st.global.u32 [$r1], $r0;
+
+	l_exit: exit;
+}
+//END INSTRUCTIONS

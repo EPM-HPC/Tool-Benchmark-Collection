@@ -1,2 +1,1 @@
-# GPU-Benchmarks
 # Benchmark-collection

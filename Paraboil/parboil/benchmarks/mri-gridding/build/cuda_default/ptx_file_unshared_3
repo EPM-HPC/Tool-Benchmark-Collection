@@ -1,0 +1,1158 @@
+
+	.version 2.3
+	.target sm_20
+	.address_size 64
+	// compiled with /usr/local/cuda/open64/lib//be
+	// nvopencc 4.0 built on 2011-05-12
+
+	.visible .func _Z4scanPj (.param .u64 __cudaparmf1__Z4scanPj)
+
+	//-----------------------------------------------------------
+	// Compiling /tmp/tmpxft_00001afd_00000000-7_sort.cpp3.i (/tmp/ccBI#.thqcJL)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_20, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"/tmp/tmpxft_00001afd_00000000-6_sort.cudafe2.gpu"
+	.file	3	"/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include/stddef.h"
+	.file	4	"/usr/local/cuda/include/crt/device_runtime.h"
+	.file	5	"/usr/local/cuda/include/host_defines.h"
+	.file	6	"/usr/local/cuda/include/builtin_types.h"
+	.file	7	"/usr/local/cuda/include/device_types.h"
+	.file	8	"/usr/local/cuda/include/driver_types.h"
+	.file	9	"/usr/local/cuda/include/surface_types.h"
+	.file	10	"/usr/local/cuda/include/texture_types.h"
+	.file	11	"/usr/local/cuda/include/vector_types.h"
+	.file	12	"/usr/local/cuda/include/device_launch_parameters.h"
+	.file	13	"/usr/local/cuda/include/crt/storage_class.h"
+	.file	14	"/usr/include/x86_64-linux-gnu/bits/types.h"
+	.file	15	"/usr/include/time.h"
+	.file	16	"/usr/local/cuda/include/sm_11_atomic_functions.h"
+	.file	17	"src/cuda/sort.cu"
+	.file	18	"/usr/local/cuda/include/common_functions.h"
+	.file	19	"/usr/local/cuda/include/math_functions.h"
+	.file	20	"/usr/local/cuda/include/math_constants.h"
+	.file	21	"/usr/local/cuda/include/device_functions.h"
+	.file	22	"/usr/local/cuda/include/sm_12_atomic_functions.h"
+	.file	23	"/usr/local/cuda/include/sm_13_double_functions.h"
+	.file	24	"/usr/local/cuda/include/sm_20_atomic_functions.h"
+	.file	25	"/usr/local/cuda/include/sm_20_intrinsics.h"
+	.file	26	"/usr/local/cuda/include/surface_functions.h"
+	.file	27	"/usr/local/cuda/include/texture_fetch_functions.h"
+	.file	28	"/usr/local/cuda/include/math_functions_dbl_ptx3.h"
+
+
+	.visible .func _Z4scanPj (.param .u64 __cudaparmf1__Z4scanPj)
+	{
+	.reg .u32 %r<93>;
+	.reg .u64 %rd<34>;
+	.reg .pred %p<9>;
+	.loc	17	23	0
+$LDWbegin__Z4scanPj:
+	ld.param.u64 	%rd1, [__cudaparmf1__Z4scanPj];
+	mov.s64 	%rd2, %rd1;
+	.loc	17	28	0
+	mov.u32 	%r1, %tid.x;
+	mul.lo.u32 	%r2, %r1, 2;
+	add.s32 	%r3, %r2, 4;
+	add.u32 	%r4, %r2, 1;
+	add.s32 	%r5, %r2, 5;
+	shr.u32 	%r6, %r2, %r3;
+	shr.u32 	%r7, %r4, %r5;
+	shr.u32 	%r8, %r6, 8;
+	shr.u32 	%r9, %r7, 8;
+	add.u32 	%r10, %r2, %r8;
+	cvt.u64.u32 	%rd3, %r10;
+	mul.wide.u32 	%rd4, %r10, 4;
+	add.u64 	%rd5, %rd2, %rd4;
+	add.u32 	%r11, %r2, %r9;
+	cvt.u64.u32 	%rd6, %r11;
+	mul.wide.u32 	%rd7, %r11, 4;
+	add.u64 	%rd8, %rd2, %rd7;
+	ld.u32 	%r12, [%rd5+0];
+	ld.u32 	%r13, [%rd8+4];
+	add.u32 	%r14, %r12, %r13;
+	st.u32 	[%rd8+4], %r14;
+	.loc	17	29	0
+	mov.u32 	%r15, %ntid.x;
+	add.u32 	%r16, %r15, %r1;
+	mul.lo.u32 	%r17, %r16, 2;
+	add.s32 	%r18, %r17, 4;
+	add.u32 	%r19, %r17, 1;
+	add.s32 	%r20, %r17, 5;
+	shr.u32 	%r21, %r17, %r18;
+	shr.u32 	%r22, %r19, %r20;
+	shr.u32 	%r23, %r21, 8;
+	shr.u32 	%r24, %r22, 8;
+	add.u32 	%r25, %r17, %r23;
+	cvt.u64.u32 	%rd9, %r25;
+	mul.wide.u32 	%rd10, %r25, 4;
+	add.u64 	%rd11, %rd2, %rd10;
+	add.u32 	%r26, %r17, %r24;
+	cvt.u64.u32 	%rd12, %r26;
+	mul.wide.u32 	%rd13, %r26, 4;
+	add.u64 	%rd14, %rd2, %rd13;
+	ld.u32 	%r27, [%rd11+0];
+	ld.u32 	%r28, [%rd14+4];
+	add.u32 	%r29, %r27, %r28;
+	st.u32 	[%rd14+4], %r29;
+	.loc	17	32	0
+	mov.s32 	%r30, %r15;
+	mov.u32 	%r31, 0;
+	setp.eq.u32 	%p1, %r15, %r31;
+	@%p1 bra 	$Lt_0_8194;
+	mov.u32 	%r32, 2;
+$Lt_0_5122:
+	.loc	17	34	0
+	bar.sync 	0;
+	setp.le.u32 	%p2, %r30, %r1;
+	@%p2 bra 	$Lt_0_5378;
+	.loc	17	45	0
+	mul.lo.u32 	%r33, %r32, %r1;
+	mul.lo.u32 	%r34, %r33, 2;
+	add.u32 	%r35, %r34, %r32;
+	add.u32 	%r36, %r35, %r32;
+	sub.u32 	%r37, %r36, 1;
+	add.s32 	%r38, %r36, 3;
+	shr.u32 	%r39, %r37, %r38;
+	shr.u32 	%r40, %r39, 8;
+	add.u32 	%r41, %r36, %r40;
+	cvt.u64.u32 	%rd15, %r41;
+	mul.wide.u32 	%rd16, %r41, 4;
+	add.u64 	%rd17, %rd2, %rd16;
+	ld.u32 	%r42, [%rd17+-4];
+	sub.u32 	%r43, %r35, 1;
+	add.s32 	%r44, %r35, 3;
+	shr.u32 	%r45, %r43, %r44;
+	shr.u32 	%r46, %r45, 8;
+	add.u32 	%r47, %r35, %r46;
+	cvt.u64.u32 	%rd18, %r47;
+	mul.wide.u32 	%rd19, %r47, 4;
+	add.u64 	%rd20, %rd2, %rd19;
+	ld.u32 	%r48, [%rd20+-4];
+	add.u32 	%r49, %r42, %r48;
+	st.u32 	[%rd17+-4], %r49;
+$Lt_0_5378:
+	.loc	17	48	0
+	mul.lo.u32 	%r32, %r32, 2;
+	.loc	17	32	0
+	shr.u32 	%r30, %r30, 1;
+	mov.u32 	%r50, 0;
+	setp.ne.u32 	%p3, %r30, %r50;
+	@%p3 bra 	$Lt_0_5122;
+	bra.uni 	$Lt_0_4610;
+$Lt_0_8194:
+	mov.u32 	%r32, 2;
+$Lt_0_4610:
+	mov.u32 	%r51, 0;
+	setp.ne.u32 	%p4, %r1, %r51;
+	@%p4 bra 	$Lt_0_6146;
+	.loc	17	54	0
+	mul.lo.u32 	%r52, %r15, 4;
+	sub.u32 	%r53, %r52, 1;
+	add.s32 	%r54, %r52, 3;
+	shr.u32 	%r55, %r53, %r54;
+	shr.u32 	%r56, %r55, 8;
+	add.u32 	%r57, %r52, %r56;
+	cvt.u64.u32 	%rd21, %r57;
+	mul.wide.u32 	%rd22, %r57, 4;
+	add.u64 	%rd23, %rd2, %rd22;
+	ld.u32 	%r58, [%rd23+-4];
+	add.s32 	%r59, %r52, 4;
+	shr.u32 	%r60, %r52, %r59;
+	shr.u32 	%r61, %r60, 8;
+	add.u32 	%r62, %r52, %r61;
+	cvt.u64.u32 	%rd24, %r62;
+	mul.wide.u32 	%rd25, %r62, 4;
+	add.u64 	%rd26, %rd2, %rd25;
+	st.u32 	[%rd26+0], %r58;
+	.loc	17	55	0
+	mov.u32 	%r63, 0;
+	st.u32 	[%rd23+-4], %r63;
+$Lt_0_6146:
+	mov.u32 	%r64, 1;
+	setp.lt.u32 	%p5, %r15, %r64;
+	@%p5 bra 	$Lt_0_6658;
+	mov.u32 	%r65, 1;
+$Lt_0_7170:
+ //<loop> Loop body line 55, nesting depth: 1, estimated iterations: unknown
+	.loc	17	60	0
+	shr.u32 	%r32, %r32, 1;
+	.loc	17	62	0
+	bar.sync 	0;
+	setp.le.u32 	%p6, %r65, %r1;
+	@%p6 bra 	$Lt_0_7426;
+	.loc	17	73	0
+	mul.lo.u32 	%r66, %r32, %r1;
+	mul.lo.u32 	%r67, %r66, 2;
+	add.u32 	%r68, %r67, %r32;
+	sub.u32 	%r69, %r68, 1;
+	add.s32 	%r70, %r68, 3;
+	shr.u32 	%r71, %r69, %r70;
+	shr.u32 	%r72, %r71, 8;
+	add.u32 	%r73, %r68, %r72;
+	cvt.u64.u32 	%rd27, %r73;
+	mul.wide.u32 	%rd28, %r73, 4;
+	add.u64 	%rd29, %rd2, %rd28;
+	ld.u32 	%r74, [%rd29+-4];
+	.loc	17	74	0
+	add.u32 	%r75, %r68, %r32;
+	sub.u32 	%r76, %r75, 1;
+	add.s32 	%r77, %r75, 3;
+	shr.u32 	%r78, %r76, %r77;
+	shr.u32 	%r79, %r78, 8;
+	add.u32 	%r80, %r75, %r79;
+	cvt.u64.u32 	%rd30, %r80;
+	mul.wide.u32 	%rd31, %r80, 4;
+	add.u64 	%rd32, %rd2, %rd31;
+	ld.u32 	%r81, [%rd32+-4];
+	st.u32 	[%rd29+-4], %r81;
+	.loc	17	75	0
+	ld.u32 	%r82, [%rd32+-4];
+	add.u32 	%r83, %r82, %r74;
+	st.u32 	[%rd32+-4], %r83;
+$Lt_0_7426:
+	.loc	17	58	0
+	mul.lo.u32 	%r65, %r65, 2;
+	setp.le.u32 	%p7, %r65, %r15;
+	@%p7 bra 	$Lt_0_7170;
+$Lt_0_6658:
+	.loc	17	78	0
+	bar.sync 	0;
+	.loc	17	80	0
+	ld.u32 	%r84, [%rd5+0];
+	.loc	17	81	0
+	ld.u32 	%r85, [%rd8+4];
+	st.u32 	[%rd5+0], %r85;
+	.loc	17	82	0
+	ld.u32 	%r86, [%rd8+4];
+	add.u32 	%r87, %r86, %r84;
+	st.u32 	[%rd8+4], %r87;
+	.loc	17	84	0
+	ld.u32 	%r88, [%rd11+0];
+	.loc	17	85	0
+	ld.u32 	%r89, [%rd14+4];
+	st.u32 	[%rd11+0], %r89;
+	.loc	17	86	0
+	ld.u32 	%r90, [%rd14+4];
+	add.u32 	%r91, %r90, %r88;
+	st.u32 	[%rd14+4], %r91;
+	.loc	17	89	0
+	ret;
+$LDWend__Z4scanPj:
+	} // _Z4scanPj
+
+
+.entry _Z9splitSortiiPjS_S_(.param  .s32 __cudaparm__Z9splitSortiiPjS_S__numElems,
+		.param  .s32 __cudaparm__Z9splitSortiiPjS_S__iter,
+		.param  .u64 __cudaparm__Z9splitSortiiPjS_S__keys,
+		.param  .u64 __cudaparm__Z9splitSortiiPjS_S__values,
+		.param  .u64 __cudaparm__Z9splitSortiiPjS_S__histo)
+{
+	.shared .align 4 .b8 __cuda___cuda_local_var_40879_42_non_const_flags4128[2212];
+	.shared .align 4 .b8 __cuda___cuda_local_var_40880_42_non_const_histo_s32[4096];
+
+	.reg .u32 %r4;
+	.reg .u32 %r5;
+	.reg .u32 %r735;
+	.reg .u32 %r7;
+	.reg .u32 %r8;
+	.reg .u32 %r9;
+	.reg .pred %p949;
+	.reg .u64 %r15;
+	.reg .u64 %r16;
+	.reg .u64 %r17;
+	.reg .u64 %r18;
+	.reg .u32 %r939;
+	.reg .u32 %r20;
+	.reg .u32 %r938;
+	.reg .u32 %r948;
+	.reg .u64 %r23;
+	.reg .u64 %r24;
+	.reg .u32 %r25;
+	.reg .u32 %r26;
+	.reg .u32 %r27;
+	.reg .u32 %r28;
+	.reg .u32 %r944;
+	.reg .u32 %r945;
+	.reg .u32 %r716;
+	.reg .u32 %r221;
+	.reg .u32 %r55;
+	.reg .pred %p946;
+	.reg .u64 %r69;
+	.reg .u32 %r70;
+	.reg .u64 %r71;
+	.reg .u64 %r72;
+	.reg .u64 %r73;
+	.reg .u64 %r935;
+	.reg .u32 %r87;
+	.reg .u32 %r88;
+	.reg .u32 %r710;
+	.reg .u32 %r90;
+	.reg .u32 %r91;
+	.reg .u32 %r92;
+	.reg .u32 %r93;
+	.reg .u64 %r94;
+	.reg .u64 %r95;
+	.reg .u64 %r96;
+	.reg .u32 %r97;
+	.reg .u32 %r98;
+	.reg .u32 %r99;
+	.reg .u32 %r100;
+	.reg .u64 %r101;
+	.reg .u64 %r102;
+	.reg .u64 %r103;
+	.reg .u32 %r104;
+	.reg .u32 %r105;
+	.reg .u32 %r106;
+	.reg .u32 %r107;
+	.reg .u64 %r108;
+	.reg .u64 %r109;
+	.reg .u64 %r110;
+	.reg .u32 %r111;
+	.reg .u32 %r112;
+	.reg .u32 %r113;
+	.reg .u32 %r114;
+	.reg .u64 %r115;
+	.reg .u64 %r116;
+	.reg .u64 %r117;
+	.reg .u32 %r118;
+	.reg .u32 %r119;
+	.reg .u32 %r120;
+	.reg .u32 %r936;
+	.reg .u32 %r934;
+	.reg .u32 %r947;
+	.reg .u32 %r937;
+	.reg .u32 %r888;
+	.reg .pred %p126;
+	.reg .u64 %r322;
+	.reg .u32 %r147;
+	.reg .u32 %r576;
+	.reg .u32 %r149;
+	.reg .u32 %r150;
+	.reg .pred %p202;
+	.reg .u32 %r152;
+	.reg .pred %p553;
+	.reg .u32 %r154;
+	.reg .pred %p320;
+	.reg .u32 %r323;
+	.reg .u32 %r157;
+	.reg .u32 %r158;
+	.reg .u32 %r159;
+	.reg .u32 %r160;
+	.reg .u32 %r161;
+	.reg .u32 %r162;
+	.reg .u32 %r163;
+	.reg .u32 %r164;
+	.reg .u32 %r165;
+	.reg .u32 %r166;
+	.reg .u32 %r167;
+	.reg .u32 %r168;
+	.reg .u32 %r169;
+	.reg .u32 %r170;
+	.reg .u32 %r171;
+	.reg .u32 %r172;
+	.reg .u32 %r173;
+	.reg .u32 %r174;
+	.reg .u32 %r175;
+	.reg .u64 %r176;
+	.reg .u64 %r177;
+	.reg .u64 %r321;
+	.reg .u32 %r179;
+	.reg .u64 %r180;
+	.reg .u64 %r181;
+	.reg .u64 %r720;
+	.reg .u32 %r183;
+	.reg .u64 %r184;
+	.reg .u64 %r185;
+	.reg .u64 %r714;
+	.reg .u32 %r187;
+	.reg .u64 %r188;
+	.reg .u64 %r189;
+	.reg .u64 %r190;
+	.reg .u32 %r191;
+	.reg .u64 %r192;
+	.reg .u64 %r193;
+	.reg .u64 %r569;
+	.reg .u32 %r225;
+	.reg .u32 %r226;
+	.reg .u32 %r857;
+	.reg .u32 %r228;
+	.reg .u32 %r869;
+	.reg .u32 %r230;
+	.reg .u32 %r231;
+	.reg .u64 %r232;
+	.reg .u64 %r233;
+	.reg .u64 %r884;
+	.reg .u32 %r235;
+	.reg .u32 %r236;
+	.reg .u32 %r237;
+	.reg .u32 %r729;
+	.reg .u32 %r239;
+	.reg .u32 %r886;
+	.reg .u32 %r241;
+	.reg .u32 %r242;
+	.reg .u64 %r243;
+	.reg .u64 %r244;
+	.reg .u64 %r868;
+	.reg .u32 %r246;
+	.reg .u32 %r247;
+	.reg .u32 %r248;
+	.reg .u32 %r882;
+	.reg .u32 %r250;
+	.reg .u32 %r893;
+	.reg .u32 %r252;
+	.reg .u32 %r253;
+	.reg .u64 %r254;
+	.reg .u64 %r255;
+	.reg .u64 %r719;
+	.reg .u32 %r257;
+	.reg .u32 %r258;
+	.reg .u32 %r259;
+	.reg .u32 %r892;
+	.reg .u32 %r261;
+	.reg .u32 %r885;
+	.reg .u32 %r263;
+	.reg .u32 %r264;
+	.reg .u64 %r265;
+	.reg .u64 %r266;
+	.reg .u64 %r880;
+	.reg .u32 %r268;
+	.reg .u32 %r269;
+	.reg .u32 %r270;
+	.reg .u32 %r271;
+	.reg .u32 %r272;
+	.reg .u32 %r273;
+	.reg .u32 %r274;
+	.reg .u32 %r461;
+	.reg .u32 %r460;
+	.reg .pred %p356;
+	.reg .u32 %r397;
+	.reg .u32 %r398;
+	.reg .u32 %r399;
+	.reg .u32 %r400;
+	.reg .u32 %r401;
+	.reg .u32 %r402;
+	.reg .u32 %r403;
+	.reg .u32 %r404;
+	.reg .u32 %r405;
+	.reg .u64 %r406;
+	.reg .u64 %r407;
+	.reg .u64 %r408;
+	.reg .u32 %r409;
+	.reg .u32 %r410;
+	.reg .u32 %r411;
+	.reg .u32 %r412;
+	.reg .u32 %r413;
+	.reg .u32 %r414;
+	.reg .u64 %r415;
+	.reg .u64 %r416;
+	.reg .u64 %r417;
+	.reg .u32 %r418;
+	.reg .u32 %r419;
+	.reg .u32 %r462;
+	.reg .pred %p463;
+	.reg .u32 %r620;
+	.reg .u32 %r621;
+	.reg .u32 %r622;
+	.reg .u32 %r623;
+	.reg .u32 %r624;
+	.reg .u64 %r625;
+	.reg .u64 %r626;
+	.reg .u64 %r627;
+	.reg .u32 %r628;
+	.reg .u32 %r629;
+	.reg .u32 %r708;
+	.reg .pred %p750;
+	.reg .u32 %r791;
+	.reg .u32 %r792;
+	.reg .u32 %r793;
+	.reg .u32 %r794;
+	.reg .u32 %r795;
+	.reg .u32 %r796;
+	.reg .u32 %r797;
+	.reg .u32 %r798;
+	.reg .u64 %r799;
+	.reg .u64 %r800;
+	.reg .u64 %r801;
+	.reg .u32 %r802;
+	.reg .u32 %r803;
+	.reg .u32 %r804;
+	.reg .u32 %r805;
+	.reg .u32 %r806;
+	.reg .u32 %r807;
+	.reg .u32 %r808;
+	.reg .u64 %r809;
+	.reg .u64 %r810;
+	.reg .u64 %r811;
+	.reg .u32 %r812;
+	.reg .u32 %r813;
+	.reg .u32 %r814;
+	.reg .pred %p856;
+	.reg .u32 %r895;
+	.reg .u32 %r896;
+	.reg .u32 %r897;
+	.reg .u32 %r898;
+	.reg .u32 %r899;
+	.reg .u32 %r900;
+	.reg .u32 %r901;
+	.reg .u32 %r902;
+	.reg .u32 %r903;
+	.reg .u32 %r904;
+	.reg .u32 %r905;
+	.reg .u32 %r906;
+	.reg .u32 %r907;
+	.reg .u32 %r908;
+	.reg .u32 %r909;
+	.reg .u32 %r910;
+	.reg .u32 %r911;
+	.reg .u32 %r912;
+	.reg .u32 %r913;
+	.reg .u32 %r914;
+	.reg .u32 %r915;
+	.reg .u32 %r916;
+	.reg .u32 %r917;
+	.reg .pred %p918;
+	.reg .u32 %r920;
+	.reg .u32 %r921;
+	.reg .pred %p922;
+	.reg .u32 %r924;
+	.reg .u32 %r925;
+	.reg .pred %p926;
+	.reg .u32 %r928;
+	.reg .u32 %r929;
+	.reg .pred %p930;
+	.reg .pred %p933;
+	.reg .u32 %r967;
+	.reg .u32 %r968;
+	.reg .u64 %r969;
+	.reg .u64 %r970;
+	.reg .u64 %r971;
+	.reg .u64 %r972;
+	.reg .u32 %r973;
+	.reg .u64 %r974;
+	.reg .u64 %r975;
+	.reg .u64 %r976;
+	.reg .u32 %r977;
+	.reg .u64 %r978;
+	.reg .u64 %r979;
+	.reg .u64 %r980;
+	.reg .u32 %r981;
+	.reg .u64 %r982;
+	.reg .u64 %r983;
+	.reg .u64 %r984;
+	.reg .u64 %r985;
+	.reg .u32 %r986;
+	.reg .u64 %r987;
+	.reg .u32 %r988;
+	.reg .u64 %r989;
+	.reg .u32 %r990;
+	.reg .u64 %r991;
+	.reg .u32 %r992;
+	.reg .u64 %r993;
+	.reg .u64 %r1001;
+	.reg .u64 %r1002;
+	.reg .u64 %r1003;
+	.reg .u32 %r1004;
+	.reg .u64 %r1005;
+	.reg .u32 %r1006;
+	.reg .u32 %r1007;
+	.reg .u32 %r1008;
+	.reg .u64 %r1009;
+	.reg .u64 %r1010;
+	.reg .u64 %r1011;
+	BB_1_0:
+	BB_1_2:
+		mov.u32 %r4, %ctaid.x; 
+		mul.lo.u32 %r5, %r4, 128; 
+		mov.u32 %r735, %tid.x; 
+		add.u32 %r7, %r5, %r735; 
+		mul.lo.u32 %r8, %r7, 4; 
+		ld.param.s32 %r9, [__cudaparm__Z9splitSortiiPjS_S__numElems]; 
+		setp.gt.u32 %p949, %r9, %r8; 
+		@!%p949 bra BB_1_4; 
+	BB_1_3:
+		cvt.u64.u32 %r15, %r8; 
+		mul.wide.u32 %r16, %r8, 4; 
+		ld.param.u64 %r17, [__cudaparm__Z9splitSortiiPjS_S__keys]; 
+		add.u64 %r18, %r17, %r16; 
+		ld.global.v4.u32 {%r939, %r20, %r938, %r948}, [%r18]; 
+		ld.param.u64 %r23, [__cudaparm__Z9splitSortiiPjS_S__values]; 
+		add.u64 %r24, %r23, %r16; 
+		ld.global.v4.u32 {%r25, %r26, %r27, %r28}, [%r24]; 
+		mov.s32 %r944, %r25; 
+		mov.s32 %r945, %r26; 
+		mov.s32 %r716, %r27; 
+		mov.s32 %r221, %r28; 
+		bra.uni BB_1_5; 
+	BB_1_4:
+		mov.u32 %r948, -1; 
+		mov.u32 %r938, -1; 
+		mov.u32 %r20, -1; 
+		mov.u32 %r939, -1; 
+	BB_1_5:
+		mov.u32 %r55, 1023; 
+		setp.le.u32 %p946, %r735, %r55; 
+		@!%p946 bra BB_1_7; 
+	BB_1_6:
+		mov.u64 %r69, __cuda___cuda_local_var_40880_42_non_const_histo_s32; 
+		mov.u32 %r70, 0; 
+		cvt.u64.u32 %r71, %r735; 
+		mul.wide.u32 %r72, %r735, 4; 
+		add.u64 %r73, %r69, %r72; 
+		st.shared.u32 [%r73], %r70; 
+	BB_1_7:
+		mov.u64 %r935, __cuda___cuda_local_var_40880_42_non_const_histo_s32; 
+		bar.sync 0; 
+		ld.param.s32 %r87, [__cudaparm__Z9splitSortiiPjS_S__iter]; 
+		mul.lo.s32 %r88, %r87, 10; 
+		add.s32 %r710, %r88, 10; 
+		shl.b32 %r90, 1, %r710; 
+		sub.u32 %r91, %r90, 1; 
+		and.b32 %r92, %r91, %r939; 
+		shr.u32 %r93, %r92, %r88; 
+		cvt.u64.u32 %r94, %r93; 
+		mul.wide.u32 %r95, %r93, 4; 
+		add.u64 %r96, %r935, %r95; 
+		mov.u32 %r97, 1; 
+		atom.shared.add.u32 %r98, [%r96], %r97; 
+		and.b32 %r99, %r91, %r20; 
+		shr.u32 %r100, %r99, %r88; 
+		cvt.u64.u32 %r101, %r100; 
+		mul.wide.u32 %r102, %r100, 4; 
+		add.u64 %r103, %r935, %r102; 
+		mov.u32 %r104, 1; 
+		atom.shared.add.u32 %r105, [%r103], %r104; 
+		and.b32 %r106, %r91, %r938; 
+		shr.u32 %r107, %r106, %r88; 
+		cvt.u64.u32 %r108, %r107; 
+		mul.wide.u32 %r109, %r107, 4; 
+		add.u64 %r110, %r935, %r109; 
+		mov.u32 %r111, 1; 
+		atom.shared.add.u32 %r112, [%r110], %r111; 
+		and.b32 %r113, %r91, %r948; 
+		shr.u32 %r114, %r113, %r88; 
+		cvt.u64.u32 %r115, %r114; 
+		mul.wide.u32 %r116, %r114, 4; 
+		add.u64 %r117, %r935, %r116; 
+		mov.u32 %r118, 1; 
+		atom.shared.add.u32 %r119, [%r117], %r118; 
+		mul.lo.u32 %r120, %r735, 4; 
+		mov.s32 %r936, %r120; 
+		add.u32 %r934, %r120, 1; 
+		add.u32 %r947, %r120, 2; 
+		add.u32 %r937, %r120, 3; 
+		mov.s32 %r888, %r88; 
+		setp.ge.s32 %p126, %r88, %r710; 
+		@%p126 bra BB_1_24; 
+	BB_1_8:
+		mov.u64 %r322, __cuda___cuda_local_var_40879_42_non_const_flags4128; 
+		mul.lo.u32 %r147, %r735, 2; 
+		mov.u32 %r576, %ntid.x; 
+		add.u32 %r149, %r576, %r735; 
+		mov.u32 %r150, 0; 
+		setp.ne.u32 %p202, %r576, %r150; 
+		mov.u32 %r152, 0; 
+		setp.eq.u32 %p553, %r735, %r152; 
+		mov.u32 %r154, 1; 
+		setp.ge.u32 %p320, %r576, %r154; 
+		mul.lo.u32 %r323, %r576, 4; 
+		add.s32 %r157, %r147, 4; 
+		add.u32 %r158, %r147, 1; 
+		add.s32 %r159, %r147, 5; 
+		mul.lo.u32 %r160, %r149, 2; 
+		add.s32 %r161, %r323, 4; 
+		shr.u32 %r162, %r147, %r157; 
+		shr.u32 %r163, %r158, %r159; 
+		add.s32 %r164, %r160, 4; 
+		add.u32 %r165, %r160, 1; 
+		add.s32 %r166, %r160, 5; 
+		shr.u32 %r167, %r323, %r161; 
+		shr.u32 %r168, %r162, 8; 
+		shr.u32 %r169, %r163, 8; 
+		shr.u32 %r170, %r160, %r164; 
+		shr.u32 %r171, %r165, %r166; 
+		shr.u32 %r172, %r167, 8; 
+		shr.u32 %r173, %r170, 8; 
+		shr.u32 %r174, %r171, 8; 
+		add.u32 %r175, %r147, %r168; 
+		cvt.u64.u32 %r176, %r175; 
+		mul.wide.u32 %r177, %r175, 4; 
+		add.u64 %r321, %r322, %r177; 
+		add.u32 %r179, %r147, %r169; 
+		cvt.u64.u32 %r180, %r179; 
+		mul.wide.u32 %r181, %r179, 4; 
+		add.u64 %r720, %r322, %r181; 
+		add.u32 %r183, %r323, %r172; 
+		cvt.u64.u32 %r184, %r183; 
+		mul.wide.u32 %r185, %r183, 4; 
+		add.u64 %r714, %r322, %r185; 
+		add.u32 %r187, %r160, %r173; 
+		cvt.u64.u32 %r188, %r187; 
+		mul.wide.u32 %r189, %r187, 4; 
+		add.u64 %r190, %r322, %r189; 
+		add.u32 %r191, %r160, %r174; 
+		cvt.u64.u32 %r192, %r191; 
+		mul.wide.u32 %r193, %r191, 4; 
+		add.u64 %r569, %r322, %r193; 
+	BB_1_9:
+		shr.u32 %r225, %r939, %r888; 
+		add.s32 %r226, %r936, 4; 
+		and.b32 %r857, %r225, 1; 
+		shr.u32 %r228, %r936, %r226; 
+		mul.lo.u32 %r869, %r857, 16; 
+		shr.u32 %r230, %r228, 8; 
+		add.u32 %r231, %r230, %r936; 
+		cvt.u64.u32 %r232, %r231; 
+		mul.wide.u32 %r233, %r231, 4; 
+		add.u64 %r884, %r322, %r233; 
+		shl.b32 %r235, 1, %r869; 
+		st.shared.u32 [%r884], %r235; 
+		shr.u32 %r236, %r20, %r888; 
+		add.s32 %r237, %r934, 4; 
+		and.b32 %r729, %r236, 1; 
+		shr.u32 %r239, %r934, %r237; 
+		mul.lo.u32 %r886, %r729, 16; 
+		shr.u32 %r241, %r239, 8; 
+		add.u32 %r242, %r241, %r934; 
+		cvt.u64.u32 %r243, %r242; 
+		mul.wide.u32 %r244, %r242, 4; 
+		add.u64 %r868, %r322, %r244; 
+		shl.b32 %r246, 1, %r886; 
+		st.shared.u32 [%r868], %r246; 
+		shr.u32 %r247, %r938, %r888; 
+		add.s32 %r248, %r947, 4; 
+		and.b32 %r882, %r247, 1; 
+		shr.u32 %r250, %r947, %r248; 
+		mul.lo.u32 %r893, %r882, 16; 
+		shr.u32 %r252, %r250, 8; 
+		add.u32 %r253, %r252, %r947; 
+		cvt.u64.u32 %r254, %r253; 
+		mul.wide.u32 %r255, %r253, 4; 
+		add.u64 %r719, %r322, %r255; 
+		shl.b32 %r257, 1, %r893; 
+		st.shared.u32 [%r719], %r257; 
+		shr.u32 %r258, %r948, %r888; 
+		add.s32 %r259, %r937, 4; 
+		and.b32 %r892, %r258, 1; 
+		shr.u32 %r261, %r937, %r259; 
+		mul.lo.u32 %r885, %r892, 16; 
+		shr.u32 %r263, %r261, 8; 
+		add.u32 %r264, %r263, %r937; 
+		cvt.u64.u32 %r265, %r264; 
+		mul.wide.u32 %r266, %r264, 4; 
+		add.u64 %r880, %r322, %r266; 
+		shl.b32 %r268, 1, %r885; 
+		st.shared.u32 [%r880], %r268; 
+		bar.sync 0; 
+		ld.shared.u32 %r269, [%r321]; 
+		ld.shared.u32 %r270, [%r720 + 4]; 
+		add.u32 %r271, %r269, %r270; 
+		st.shared.u32 [%r720 + 4], %r271; 
+		ld.shared.u32 %r272, [%r190]; 
+		ld.shared.u32 %r273, [%r569 + 4]; 
+		add.u32 %r274, %r272, %r273; 
+		st.shared.u32 [%r569 + 4], %r274; 
+		mov.s32 %r461, %r576; 
+		@!%p202 bra BB_1_15; 
+	BB_1_10:
+		mov.u32 %r460, 2; 
+	BB_1_11:
+		bar.sync 0; 
+		setp.le.u32 %p356, %r461, %r735; 
+		@%p356 bra BB_1_13; 
+	BB_1_12:
+		mul.lo.u32 %r397, %r460, %r735; 
+		mul.lo.u32 %r398, %r397, 2; 
+		add.u32 %r399, %r398, %r460; 
+		add.u32 %r400, %r399, %r460; 
+		sub.u32 %r401, %r400, 1; 
+		add.s32 %r402, %r400, 3; 
+		shr.u32 %r403, %r401, %r402; 
+		shr.u32 %r404, %r403, 8; 
+		add.u32 %r405, %r400, %r404; 
+		cvt.u64.u32 %r406, %r405; 
+		mul.wide.u32 %r407, %r405, 4; 
+		add.u64 %r408, %r322, %r407; 
+		ld.shared.u32 %r409, [%r408 + -4]; 
+		sub.u32 %r410, %r399, 1; 
+		add.s32 %r411, %r399, 3; 
+		shr.u32 %r412, %r410, %r411; 
+		shr.u32 %r413, %r412, 8; 
+		add.u32 %r414, %r399, %r413; 
+		cvt.u64.u32 %r415, %r414; 
+		mul.wide.u32 %r416, %r414, 4; 
+		add.u64 %r417, %r322, %r416; 
+		ld.shared.u32 %r418, [%r417 + -4]; 
+		add.u32 %r419, %r409, %r418; 
+		st.shared.u32 [%r408 + -4], %r419; 
+	BB_1_13:
+		mul.lo.u32 %r460, %r460, 2; 
+		shr.u32 %r461, %r461, 1; 
+		mov.u32 %r462, 0; 
+		setp.ne.u32 %p463, %r461, %r462; 
+		@%p463 bra BB_1_11; 
+	BB_1_14:
+		bra.uni BB_1_16; 
+	BB_1_15:
+		mov.u32 %r460, 2; 
+	BB_1_16:
+		@!%p553 bra BB_1_18; 
+	BB_1_17:
+		sub.u32 %r620, %r323, 1; 
+		add.s32 %r621, %r323, 3; 
+		shr.u32 %r622, %r620, %r621; 
+		shr.u32 %r623, %r622, 8; 
+		add.u32 %r624, %r323, %r623; 
+		cvt.u64.u32 %r625, %r624; 
+		mul.wide.u32 %r626, %r624, 4; 
+		add.u64 %r627, %r322, %r626; 
+		ld.shared.u32 %r628, [%r627 + -4]; 
+		st.shared.u32 [%r714], %r628; 
+		mov.u32 %r629, 0; 
+		st.shared.u32 [%r627 + -4], %r629; 
+	BB_1_18:
+		@!%p320 bra BB_1_23; 
+	BB_1_19:
+		mov.u32 %r708, 1; 
+	BB_1_20:
+		shr.u32 %r460, %r460, 1; 
+		bar.sync 0; 
+		setp.le.u32 %p750, %r708, %r735; 
+		@%p750 bra BB_1_22; 
+	BB_1_21:
+		mul.lo.u32 %r791, %r460, %r735; 
+		mul.lo.u32 %r792, %r791, 2; 
+		add.u32 %r793, %r792, %r460; 
+		sub.u32 %r794, %r793, 1; 
+		add.s32 %r795, %r793, 3; 
+		shr.u32 %r796, %r794, %r795; 
+		shr.u32 %r797, %r796, 8; 
+		add.u32 %r798, %r793, %r797; 
+		cvt.u64.u32 %r799, %r798; 
+		mul.wide.u32 %r800, %r798, 4; 
+		add.u64 %r801, %r322, %r800; 
+		ld.shared.u32 %r802, [%r801 + -4]; 
+		add.u32 %r803, %r793, %r460; 
+		sub.u32 %r804, %r803, 1; 
+		add.s32 %r805, %r803, 3; 
+		shr.u32 %r806, %r804, %r805; 
+		shr.u32 %r807, %r806, 8; 
+		add.u32 %r808, %r803, %r807; 
+		cvt.u64.u32 %r809, %r808; 
+		mul.wide.u32 %r810, %r808, 4; 
+		add.u64 %r811, %r322, %r810; 
+		ld.shared.u32 %r812, [%r811 + -4]; 
+		st.shared.u32 [%r801 + -4], %r812; 
+		ld.shared.u32 %r813, [%r811 + -4]; 
+		add.u32 %r814, %r813, %r802; 
+		st.shared.u32 [%r811 + -4], %r814; 
+	BB_1_22:
+		mul.lo.u32 %r708, %r708, 2; 
+		setp.le.u32 %p856, %r708, %r576; 
+		@%p856 bra BB_1_20; 
+	BB_1_23:
+		bar.sync 0; 
+		ld.shared.u32 %r895, [%r321]; 
+		ld.shared.u32 %r896, [%r720 + 4]; 
+		st.shared.u32 [%r321], %r896; 
+		ld.shared.u32 %r897, [%r720 + 4]; 
+		add.u32 %r898, %r897, %r895; 
+		st.shared.u32 [%r720 + 4], %r898; 
+		ld.shared.u32 %r899, [%r190]; 
+		ld.shared.u32 %r900, [%r569 + 4]; 
+		st.shared.u32 [%r190], %r900; 
+		ld.shared.u32 %r901, [%r569 + 4]; 
+		add.u32 %r902, %r901, %r899; 
+		st.shared.u32 [%r569 + 4], %r902; 
+		bar.sync 0; 
+		ld.shared.u32 %r903, [%r884]; 
+		shr.u32 %r904, %r903, %r869; 
+		and.b32 %r905, %r904, 65535; 
+		ld.shared.u32 %r906, [%r868]; 
+		shr.u32 %r907, %r906, %r886; 
+		and.b32 %r908, %r907, 65535; 
+		ld.shared.u32 %r909, [%r719]; 
+		shr.u32 %r910, %r909, %r893; 
+		and.b32 %r911, %r910, 65535; 
+		ld.shared.u32 %r912, [%r880]; 
+		shr.u32 %r913, %r912, %r885; 
+		and.b32 %r914, %r913, 65535; 
+		ld.shared.u16 %r915, [%r714]; 
+		add.u32 %r916, %r915, %r905; 
+		mov.u32 %r917, 0; 
+		setp.ne.u32 %p918, %r857, %r917; 
+		selp.u32 %r936, %r916, %r905, %p918; 
+		add.u32 %r920, %r915, %r908; 
+		mov.u32 %r921, 0; 
+		setp.ne.u32 %p922, %r729, %r921; 
+		selp.u32 %r934, %r920, %r908, %p922; 
+		add.u32 %r924, %r915, %r911; 
+		mov.u32 %r925, 0; 
+		setp.ne.u32 %p926, %r882, %r925; 
+		selp.u32 %r947, %r924, %r911, %p926; 
+		add.u32 %r928, %r915, %r914; 
+		mov.u32 %r929, 0; 
+		setp.ne.u32 %p930, %r892, %r929; 
+		selp.u32 %r937, %r928, %r914, %p930; 
+		bar.sync 0; 
+		add.s32 %r888, %r888, 1; 
+		setp.ne.s32 %p933, %r710, %r888; 
+		@%p933 bra BB_1_9; 
+	BB_1_24:
+		@!%p949 bra BB_1_26; 
+	BB_1_25:
+		mul.lo.u32 %r967, %r4, 512; 
+		add.u32 %r968, %r967, %r936; 
+		cvt.u64.u32 %r969, %r968; 
+		mul.wide.u32 %r970, %r968, 4; 
+		ld.param.u64 %r971, [__cudaparm__Z9splitSortiiPjS_S__keys]; 
+		add.u64 %r972, %r970, %r971; 
+		st.global.u32 [%r972], %r939; 
+		add.u32 %r973, %r967, %r934; 
+		cvt.u64.u32 %r974, %r973; 
+		mul.wide.u32 %r975, %r973, 4; 
+		add.u64 %r976, %r975, %r971; 
+		st.global.u32 [%r976], %r20; 
+		add.u32 %r977, %r967, %r947; 
+		cvt.u64.u32 %r978, %r977; 
+		mul.wide.u32 %r979, %r977, 4; 
+		add.u64 %r980, %r979, %r971; 
+		st.global.u32 [%r980], %r938; 
+		add.u32 %r981, %r967, %r937; 
+		cvt.u64.u32 %r982, %r981; 
+		mul.wide.u32 %r983, %r981, 4; 
+		add.u64 %r984, %r983, %r971; 
+		st.global.u32 [%r984], %r948; 
+		ld.param.u64 %r985, [__cudaparm__Z9splitSortiiPjS_S__values]; 
+		mov.s32 %r986, %r944; 
+		add.u64 %r987, %r970, %r985; 
+		st.global.u32 [%r987], %r986; 
+		mov.s32 %r988, %r945; 
+		add.u64 %r989, %r975, %r985; 
+		st.global.u32 [%r989], %r988; 
+		mov.s32 %r990, %r716; 
+		add.u64 %r991, %r979, %r985; 
+		st.global.u32 [%r991], %r990; 
+		mov.s32 %r992, %r221; 
+		add.u64 %r993, %r983, %r985; 
+		st.global.u32 [%r993], %r992; 
+	BB_1_26:
+		@!%p946 bra BB_1_28; 
+	BB_1_27:
+		cvt.u64.u32 %r1001, %r735; 
+		mul.wide.u32 %r1002, %r735, 4; 
+		add.u64 %r1003, %r935, %r1002; 
+		ld.shared.u32 %r1004, [%r1003]; 
+		ld.param.u64 %r1005, [__cudaparm__Z9splitSortiiPjS_S__histo]; 
+		mov.u32 %r1006, %nctaid.x; 
+		mul.lo.u32 %r1007, %r1006, %r735; 
+		add.u32 %r1008, %r4, %r1007; 
+		cvt.u64.u32 %r1009, %r1008; 
+		mul.wide.u32 %r1010, %r1008, 4; 
+		add.u64 %r1011, %r1005, %r1010; 
+		st.global.u32 [%r1011], %r1004; 
+	BB_1_28:
+		exit; 
+	BB_1_1:
+}
+
+
+
+
+
+	.entry _Z14splitRearrangeiiPjS_S_S_S_ (
+		.param .s32 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__numElems,
+		.param .s32 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__iter,
+		.param .u64 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__keys_i,
+		.param .u64 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__keys_o,
+		.param .u64 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__values_i,
+		.param .u64 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__values_o,
+		.param .u64 __cudaparm__Z14splitRearrangeiiPjS_S_S_S__histo)
+	{
+	.reg .u32 %r<60>;
+	.reg .u64 %rd<52>;
+	.reg .pred %p<10>;
+	.shared .align 4 .b8 __cuda___cuda_local_var_40947_40_non_const_histo_s6392[4096];
+	.shared .align 4 .b8 __cuda___cuda_local_var_40948_40_non_const_array_s10488[2048];
+	// __cuda_local_var_40955_15_non_const_value = 0
+	.loc	17	160	0
+$LDWbegin__Z14splitRearrangeiiPjS_S_S_S_:
+	mov.u32 	%r1, %tid.x;
+	cvt.u64.u32 	%rd1, %r1;
+	mov.u32 	%r2, %ctaid.x;
+	mov.u32 	%r3, 1023;
+	setp.gt.u32 	%p1, %r1, %r3;
+	@%p1 bra 	$Lt_2_6914;
+	.loc	17	166	0
+	mov.u64 	%rd2, __cuda___cuda_local_var_40947_40_non_const_histo_s6392;
+	ld.param.u64 	%rd3, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__histo];
+	mov.u32 	%r4, %nctaid.x;
+	mul.lo.u32 	%r5, %r4, %r1;
+	add.u32 	%r6, %r2, %r5;
+	cvt.u64.u32 	%rd4, %r6;
+	mul.wide.u32 	%rd5, %r6, 4;
+	add.u64 	%rd6, %rd3, %rd5;
+	ld.global.u32 	%r7, [%rd6+0];
+	mul.lo.u64 	%rd7, %rd1, 4;
+	add.u64 	%rd8, %rd2, %rd7;
+	st.shared.u32 	[%rd8+0], %r7;
+$Lt_2_6914:
+	mov.u64 	%rd2, __cuda___cuda_local_var_40947_40_non_const_histo_s6392;
+	mul.lo.u32 	%r8, %r2, 128;
+	add.u32 	%r9, %r8, %r1;
+	mul.lo.u32 	%r10, %r9, 4;
+	ld.param.s32 	%r11, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__numElems];
+	setp.gt.s32 	%p2, %r11, %r10;
+	@!%p2 bra 	$Lt_2_7682;
+	.loc	17	171	0
+	cvt.s64.s32 	%rd9, %r10;
+	mul.wide.s32 	%rd10, %r10, 4;
+	ld.param.u64 	%rd11, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__keys_i];
+	add.u64 	%rd12, %rd11, %rd10;
+	ld.global.v4.u32 	{%r12,%r13,%r14,%r15}, [%rd12+0];
+	.loc	17	172	0
+	ld.param.u64 	%rd13, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__values_i];
+	add.u64 	%rd14, %rd13, %rd10;
+	ld.global.v4.u32 	{%r16,%r17,%r18,%r19}, [%rd14+0];
+	mov.s32 	%r20, %r16;
+	mov.s32 	%r21, %r17;
+	mov.s32 	%r22, %r18;
+	mov.s32 	%r23, %r19;
+	bra.uni 	$Lt_2_7426;
+$Lt_2_7682:
+	.loc	17	177	0
+	mov.u32 	%r15, -1;
+	mov.u32 	%r14, -1;
+	mov.u32 	%r13, -1;
+	mov.u32 	%r12, -1;
+$Lt_2_7426:
+	mov.u64 	%rd15, __cuda___cuda_local_var_40948_40_non_const_array_s10488;
+	.loc	17	184	0
+	ld.param.s32 	%r24, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__iter];
+	mul.lo.s32 	%r25, %r24, 10;
+	add.s32 	%r26, %r25, 10;
+	shl.b32 	%r27, 1, %r26;
+	mul.lo.u64 	%rd16, %rd1, 16;
+	add.u64 	%rd17, %rd15, %rd16;
+	sub.u32 	%r28, %r27, 1;
+	and.b32 	%r29, %r28, %r12;
+	shr.u32 	%r30, %r29, %r25;
+	and.b32 	%r31, %r28, %r13;
+	shr.u32 	%r32, %r31, %r25;
+	and.b32 	%r33, %r28, %r14;
+	shr.u32 	%r34, %r33, %r25;
+	and.b32 	%r35, %r28, %r15;
+	shr.u32 	%r36, %r35, %r25;
+	st.shared.v4.u32 	[%rd17+0], {%r30,%r32,%r34,%r36};
+	.loc	17	185	0
+	bar.sync 	0;
+	.loc	17	187	0
+	cvt.u64.u32 	%rd18, %r30;
+	mul.wide.u32 	%rd19, %r30, 4;
+	add.u64 	%rd20, %rd2, %rd19;
+	ld.shared.u32 	%r37, [%rd20+0];
+	cvt.u64.u32 	%rd21, %r32;
+	mul.wide.u32 	%rd22, %r32, 4;
+	add.u64 	%rd23, %rd2, %rd22;
+	ld.shared.u32 	%r38, [%rd23+0];
+	cvt.u64.u32 	%rd24, %r34;
+	mul.wide.u32 	%rd25, %r34, 4;
+	add.u64 	%rd26, %rd2, %rd25;
+	ld.shared.u32 	%r39, [%rd26+0];
+	.loc	17	189	0
+	mul.lo.u32 	%r40, %r1, 4;
+	sub.s32 	%r41, %r40, 1;
+	mov.s32 	%r42, %r41;
+	mov.u32 	%r43, 0;
+	setp.lt.s32 	%p3, %r41, %r43;
+	@%p3 bra 	$Lt_2_7938;
+	mov.s32 	%r44, %r40;
+	mov.s32 	%r45, %r44;
+$Lt_2_8450:
+ //<loop> Loop body line 189, nesting depth: 1, estimated iterations: unknown
+	cvt.s64.s32 	%rd27, %r42;
+	mul.wide.s32 	%rd28, %r42, 4;
+	add.u64 	%rd29, %rd15, %rd28;
+	ld.shared.u32 	%r46, [%rd29+0];
+	setp.ne.u32 	%p4, %r46, %r30;
+	@%p4 bra 	$Lt_2_7938;
+	.loc	17	192	0
+	add.u32 	%r37, %r37, 1;
+	.loc	17	193	0
+	sub.s32 	%r42, %r42, 1;
+$Lt_2_8706:
+	.loc	17	195	0
+	mov.u32 	%r47, -1;
+	setp.ne.s32 	%p5, %r42, %r47;
+	@%p5 bra 	$Lt_2_8450;
+$Lt_2_7938:
+$Lt_2_258:
+	.loc	17	200	0
+	add.u32 	%r48, %r37, 1;
+	setp.eq.u32 	%p6, %r30, %r32;
+	setp.eq.u32 	%p7, %r32, %r34;
+	selp.u32 	%r49, %r48, %r38, %p6;
+	add.u32 	%r50, %r49, 1;
+	selp.u32 	%r51, %r50, %r39, %p7;
+	add.u32 	%r52, %r51, 1;
+	cvt.u64.u32 	%rd30, %r36;
+	mul.wide.u32 	%rd31, %r36, 4;
+	add.u64 	%rd32, %rd2, %rd31;
+	ld.shared.u32 	%r53, [%rd32+0];
+	setp.eq.u32 	%p8, %r34, %r36;
+	selp.u32 	%r54, %r52, %r53, %p8;
+	@!%p2 bra 	$Lt_2_9474;
+	.loc	17	204	0
+	cvt.u64.u32 	%rd33, %r37;
+	mul.wide.u32 	%rd34, %r37, 4;
+	ld.param.u64 	%rd35, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__keys_o];
+	add.u64 	%rd36, %rd34, %rd35;
+	st.global.u32 	[%rd36+0], %r12;
+	.loc	17	205	0
+	ld.param.u64 	%rd37, [__cudaparm__Z14splitRearrangeiiPjS_S_S_S__values_o];
+	mov.s32 	%r55, %r20;
+	add.u64 	%rd38, %rd34, %rd37;
+	st.global.u32 	[%rd38+0], %r55;
+	.loc	17	207	0
+	cvt.u64.u32 	%rd39, %r49;
+	mul.wide.u32 	%rd40, %r49, 4;
+	add.u64 	%rd41, %rd40, %rd35;
+	st.global.u32 	[%rd41+0], %r13;
+	.loc	17	208	0
+	mov.s32 	%r56, %r21;
+	add.u64 	%rd42, %rd40, %rd37;
+	st.global.u32 	[%rd42+0], %r56;
+	.loc	17	210	0
+	cvt.u64.u32 	%rd43, %r51;
+	mul.wide.u32 	%rd44, %r51, 4;
+	add.u64 	%rd45, %rd44, %rd35;
+	st.global.u32 	[%rd45+0], %r14;
+	.loc	17	211	0
+	mov.s32 	%r57, %r22;
+	add.u64 	%rd46, %rd44, %rd37;
+	st.global.u32 	[%rd46+0], %r57;
+	.loc	17	213	0
+	cvt.u64.u32 	%rd47, %r54;
+	mul.wide.u32 	%rd48, %r54, 4;
+	add.u64 	%rd49, %rd48, %rd35;
+	st.global.u32 	[%rd49+0], %r15;
+	.loc	17	214	0
+	mov.s32 	%r58, %r23;
+	add.u64 	%rd50, %rd48, %rd37;
+	st.global.u32 	[%rd50+0], %r58;
+$Lt_2_9474:
+	.loc	17	216	0
+	exit;
+$LDWend__Z14splitRearrangeiiPjS_S_S_S_:
+	} // _Z14splitRearrangeiiPjS_S_S_S_
+
+
