@@ -1,4 +1,4 @@
-EXECUTABLE := fdtd2d.exe
+EXECUTABLE := fdtd2d.out
 CUFILES := fdtd2d.cu
 
 include ../common.mk

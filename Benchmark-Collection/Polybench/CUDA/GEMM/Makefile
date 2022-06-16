@@ -1,4 +1,4 @@
-EXECUTABLE := gemm.exe
+EXECUTABLE := gemm.out
 CUFILES := gemm.cu
 
 include ../common.mk
