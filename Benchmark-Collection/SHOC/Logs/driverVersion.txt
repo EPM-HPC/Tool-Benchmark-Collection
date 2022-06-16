@@ -1,0 +1,2 @@
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  510.73.08  Wed May 18 20:34:14 UTC 2022
+GCC version:  gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1) 

@@ -1,0 +1,52 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Running single precision test
+
+Performing stencil operation on host for later comparison with CUDA output
+Depending on host capabilities, this may take a while.
+Performing 1 warmup passes...done.
+
+Performing stencil operation on chosen device, 10 passes.
+Depending on chosen device, this may take a while.
+At the end of each pass the number of validation
+errors observed will be printed to the standard output.
+pass 0: 0 validation errors
+pass 1: 0 validation errors
+pass 2: 0 validation errors
+pass 3: 0 validation errors
+pass 4: 0 validation errors
+pass 5: 0 validation errors
+pass 6: 0 validation errors
+pass 7: 0 validation errors
+pass 8: 0 validation errors
+pass 9: 0 validation errors
+
+
+DP supported
+
+Performing stencil operation on host for later comparison with CUDA output
+Depending on host capabilities, this may take a while.
+Performing 1 warmup passes...done.
+
+Performing stencil operation on chosen device, 10 passes.
+Depending on chosen device, this may take a while.
+At the end of each pass the number of validation
+errors observed will be printed to the standard output.
+pass 0: 0 validation errors
+pass 1: 0 validation errors
+pass 2: 0 validation errors
+pass 3: 0 validation errors
+pass 4: 0 validation errors
+pass 5: 0 validation errors
+pass 6: 0 validation errors
+pass 7: 0 validation errors
+pass 8: 0 validation errors
+pass 9: 0 validation errors
+
+
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+DP_Sten2D	1000:512x512:8x256	GFLOPS	160.709	160.545	0.37383	159.502	160.818	159.502	160.33	160.488	160.669	160.818	160.736	160.706	160.732	160.759	160.712	
+SP_Sten2D	1000:512x512:8x256	GFLOPS	507.916	503.242	8.63453	485.321	509.251	502.927	505.219	485.321	507.498	508.924	508.893	509.251	508.333	487.501	508.555	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

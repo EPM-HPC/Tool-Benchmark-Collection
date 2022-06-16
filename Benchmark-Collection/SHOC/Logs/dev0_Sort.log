@@ -1,0 +1,19 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+Sort-Rate	262144items	GB/s	10.1402	10.102	0.106899	9.81519	10.1875	9.81519	10.0101	10.137	10.1042	10.1811	10.1449	10.1433	10.1875	10.1261	10.1701	
+Sort-Rate_PCIe	262144items	GB/s	5.23283	5.17631	0.0915519	4.99931	5.25128	5.01538	5.17539	5.23367	4.99931	5.25128	5.232	5.13243	5.24078	5.23827	5.24456	
+Sort-Rate_Parity	262144items	N	0.939089	0.951947	0.0262142	0.933096	1.02112	0.957017	0.934168	0.936891	1.02112	0.938791	0.939009	0.976319	0.943883	0.933096	0.939168	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

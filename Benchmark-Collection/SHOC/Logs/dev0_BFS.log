@@ -1,0 +1,26 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Vertices: 1000
+Edges: 999
+Running Benchmark
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+Verification of GPU results: Passed
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+BFS	v:1000_e:1998	GB/s	0.148114	0.14675	0.00506903	0.132382	0.151661	0.132382	0.150203	0.145992	0.146034	0.147456	0.151661	0.148772	0.148772	0.148817	0.147412	
+BFS_PCIe	v:1000_e:1998	GB/s	0.105861	0.105168	0.00280609	0.0971574	0.107894	0.0971574	0.107017	0.104928	0.104862	0.105593	0.107894	0.106289	0.106221	0.106041	0.105682	
+BFS_Parity	v:1000_e:1998	N	0.398081	0.395076	0.0117641	0.362553	0.405643	0.362553	0.403546	0.391355	0.392638	0.39646	0.405643	0.399702	0.400595	0.403394	0.394869	
+BFS_kernel_time	v:1000_e:1998	s	0.000108	0.000109142	4.07794e-06	0.000105472	0.000120832	0.000120832	0.000106496	0.000109568	0.000109536	0.00010848	0.000105472	0.00010752	0.00010752	0.000107488	0.000108512	
+BFS_teps	v:1000_e:1998	Edges/s	3.28329e+06	3.24566e+06	71619	3.06309e+06	3.29377e+06	3.06309e+06	3.28944e+06	3.16525e+06	3.28736e+06	3.28804e+06	3.29377e+06	3.27085e+06	3.23177e+06	3.2878e+06	3.27922e+06	
+BFS_total	v:1000_e:1998	s	0.000304268	0.000307952	7.05893e-06	0.0003033	0.000326141	0.000326141	0.000303699	0.000315615	0.000303891	0.000303828	0.0003033	0.000305425	0.000309119	0.000303851	0.000304646	
+BFS_visited_vertices	v:1000_e:1998	N	1000	1000	0	1000	1000	1000	1000	1000	1000	1000	1000	1000	1000	1000	1000	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

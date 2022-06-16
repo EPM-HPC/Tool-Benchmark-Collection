@@ -1,0 +1,17 @@
+Number of devices = 1
+Device 0:
+  name               = 'NVIDIA GeForce RTX 3090'
+  totalGlobalMem     = 24G
+  sharedMemPerBlock  = 48k
+  regsPerBlock       = 65536
+  warpSize           = 32
+  memPitch           = 2048M
+  maxThreadsPerBlock = 1024
+  maxThreadsDim[3]   = 1024,1024,64
+  maxGridSize[3]     = 2147483647,65535,65535
+  totalConstMem      = 64k
+  major (hw version) = 8
+  minor (hw version) = 6
+  clockRate          = 1695000
+  textureAlignment   = 512
+Chose device: name='NVIDIA GeForce RTX 3090' index=0

@@ -1,0 +1,38 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Running single precision test
+Initializing host memory.
+Running benchmark.
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Running double precision test
+Initializing host memory.
+Running benchmark.
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+Reduction	262144_items	GB/s	280.598	280.367	0.784839	278.201	281.007	278.201	279.928	280.677	280.527	280.912	280.668	280.312	281.007	280.49	280.95	
+Reduction-DP	131072_items	GB/s	278.414	278.167	0.565343	276.715	278.747	276.715	278.063	278.552	278.128	278.377	278.469	278.747	277.658	278.506	278.451	
+Reduction-DP_PCIe	131072_items	GB/s	16.8957	16.7373	0.516098	15.2238	17.1052	15.2238	16.8834	16.9814	16.8316	16.9984	16.8501	16.6711	16.908	16.9199	17.1052	
+Reduction-DP_Parity	131072_items	N	15.465	15.6358	0.525179	15.2788	17.1764	17.1764	15.4696	15.4034	15.5242	15.3767	15.5262	15.7203	15.4217	15.4603	15.2788	
+Reduction_PCIe	262144_items	GB/s	15.609	15.3945	1.00912	13.6716	16.6703	13.6716	14.9827	16.0569	14.2419	16.6703	15.5612	15.6568	16.4365	16.443	14.2245	
+Reduction_Parity	262144_items	N	16.97	17.2907	1.1996	15.851	19.3488	19.3488	17.6835	16.4802	18.6973	15.851	17.0364	16.9036	16.0965	16.0583	18.7512	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

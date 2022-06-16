@@ -1,0 +1,48 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Running single precision test
+Initializing test problem (this can take several minutes for large problems)
+  10% done
+  20% done
+  30% done
+  40% done
+  50% done
+  60% done
+  70% done
+  80% done
+  90% done
+  100% done
+Finished.
+1570334 of 1572864 pairs within cutoff distance = 99.8391 %
+Performing Correctness Check (can take several minutes)
+Test Passed
+Running double precision test
+Initializing test problem (this can take several minutes for large problems)
+  10% done
+  20% done
+  30% done
+  40% done
+  50% done
+  60% done
+  70% done
+  80% done
+  90% done
+  100% done
+Finished.
+1570334 of 1572864 pairs within cutoff distance = 99.8391 %
+Performing Correctness Check (can take several minutes)
+Test Passed
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+MD-LJ	12288_atoms	GFLOPS	418.492	408.905	28.9611	326.111	423.998	326.111	418.492	418.492	423.998	423.998	423.998	418.492	392.974	418.492	423.998	
+MD-LJ-Bandwidth	12288_atoms	GB/s	321.039	313.684	22.217	250.171	325.263	250.171	321.039	321.039	325.263	325.263	325.263	321.039	301.464	321.039	325.263	
+MD-LJ-Bandwidth_PCIe	12288_atoms	GB/s	52.5259	52.2828	0.719513	50.1993	52.6378	50.1993	52.5259	52.5259	52.6378	52.6378	52.6378	52.5259	51.9737	52.5259	52.6378	
+MD-LJ-DP	12288_atoms	GFLOPS	145.809	145.238	2.19332	138.765	146.472	138.765	145.809	146.472	145.809	145.809	146.472	145.153	145.809	146.472	145.809	
+MD-LJ-DP-Bandwidth	12288_atoms	GB/s	195.91	195.142	2.94695	186.445	196.8	186.445	195.91	196.8	195.91	195.91	196.8	195.027	195.91	196.8	195.91	
+MD-LJ-DP-Bandwidth_PCIe	12288_atoms	GB/s	74.1569	74.0425	0.434581	72.7588	74.2841	72.7588	74.1569	74.2841	74.1569	74.1569	74.2841	74.0301	74.1569	74.2841	74.1569	
+MD-LJ-DP_PCIe	12288_atoms	GFLOPS	55.1926	55.1076	0.323445	54.1521	55.2873	54.1521	55.1926	55.2873	55.1926	55.1926	55.2873	55.0983	55.1926	55.2873	55.1926	
+MD-LJ-DP_Parity	12288_atoms	N	1.64183	1.63539	0.024697	1.56251	1.64929	1.56251	1.64183	1.64929	1.64183	1.64183	1.64929	1.63443	1.64183	1.64929	1.64183	
+MD-LJ_PCIe	12288_atoms	GFLOPS	68.4704	68.1534	0.937924	65.4375	68.6162	65.4375	68.4704	68.4704	68.6162	68.6162	68.6162	68.4704	67.7506	68.4704	68.6162	
+MD-LJ_Parity	12288_atoms	N	5.11201	4.9949	0.353769	3.98355	5.17928	3.98355	5.11201	5.11201	5.17928	5.17928	5.17928	5.11201	4.8003	5.11201	5.17928	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

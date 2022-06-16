@@ -1,0 +1,7 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+MD5Hash	7x10	GHash/s	36.7129	36.2545	0.803729	34.2654	36.8514	35.641	36.7129	36.8514	36.8514	36.7129	36.8514	36.8514	34.2654	35.7715	36.0355	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

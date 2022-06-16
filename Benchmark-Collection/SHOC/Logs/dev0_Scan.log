@@ -1,0 +1,40 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Running single precision test
+Initializing host memory.
+Copying data to device.
+Running benchmark with size 262144
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Running double precision test
+Initializing host memory.
+Copying data to device.
+Running benchmark with size 131072
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+Test Passed
+test	atts	units	median	mean	stddev	min	max	trial0	trial1	trial2	trial3	trial4	trial5	trial6	trial7	trial8	trial9	
+Scan	262144items	GB/s	101.805	101.76	0.233645	101.222	102.014	101.222	101.676	101.754	101.494	101.776	102.014	101.87	102.004	101.953	101.834	
+Scan-DP	131072items	GB/s	72.0281	71.9745	0.157514	71.5123	72.0751	71.9441	72.0343	72.0219	72.0751	72.0368	72.0095	71.5123	72.0139	72.0479	72.0491	
+Scan-DP_PCIe	131072items	GB/s	8.07903	8.07835	0.00199385	8.0725	8.07962	8.07797	8.07911	8.07895	8.07962	8.07914	8.07879	8.0725	8.07885	8.07928	8.07929	
+Scan-DP_Parity	131072items	N	7.91544	7.90955	0.0173098	7.85876	7.92061	7.90621	7.91612	7.91476	7.92061	7.91639	7.9134	7.85876	7.91388	7.91762	7.91775	
+Scan_PCIe	262144items	GB/s	8.10513	8.10484	0.00148548	8.10142	8.10645	8.10142	8.10432	8.10481	8.10316	8.10495	8.10645	8.10555	8.10639	8.10607	8.10532	
+Scan_Parity	262144items	N	11.5606	11.5554	0.0265318	11.4944	11.5843	11.4944	11.546	11.5548	11.5253	11.5573	11.5843	11.568	11.5832	11.5774	11.5639	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.

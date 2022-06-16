@@ -1,0 +1,7 @@
+Chose device: name='NVIDIA GeForce RTX 3090' index=0
+Input training file not found - please check data directory!
+test	atts	units	median	mean	stddev	min	max	trial0	
+
+Note: Any results marked with (*) had missing values.
+      This can occur on systems with a mixture of
+      device types or architectural capabilities.
