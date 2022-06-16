@@ -33,7 +33,8 @@ class cd:
 #             |--------...
 # so   sec_bench_dir is 0_Simple/ here , this can be read from the bench file
 # make_benchmarks("./CUDASDK_bench.txt","Benchmark-Collection/CUDASDK","CUDA SDK")
-def make_benchmarks(bench_file,bench_dir,bench_name):    
+def make_benchmarks(bench_file,bench_dir,bench_name):
+    print(bench_name+" Start")
     # ====================CUDA SDK====================
     done_num = 1
     tot_num =0
@@ -46,23 +47,25 @@ def make_benchmarks(bench_file,bench_dir,bench_name):
         line = line.strip('\n')
         line = line.replace(' ', '')
         # cuda sdk dir structure
-        if(line[0].isdigit()):
+        if(line[0].isdigit() and line[1]=='_'):
             #if main_dir in dir_pair:
                 #del dir_pair[main_dir]
                 
             # for Rodinia 
             if line == '0_cuda_rodinia':
                 line='cuda'
+            # for Polybench
+            elif line== '0_poly_CUDA':
+                line='CUDA'
                 
             dir_pair[line]=[]
             main_dir=line
         else:
             dir_pair[main_dir].append(line)  
             tot_num = tot_num+1
-
-     # make all benchmarks using 'make'       
+    #print(dir_pair)
+    # make all benchmarks using 'make'       
     with cd(bench_dir):
-        # !pwd
         command= 'make clean'
         print('\n' + command)
         subprocess.call(command, shell=True)
@@ -86,5 +89,6 @@ def make_benchmarks(bench_file,bench_dir,bench_name):
     
 
 if __name__ == "__main__":
-    make_benchmarks("./CUDASDK_bench.txt","Benchmark-Collection/CUDASDK","CUDA SDK")
-    make_benchmarks("./Rodinia_bench.txt","Benchmark-Collection/Rodinia/","Rodinia")
+    make_benchmarks("./CUDASDK_bench.txt","Benchmark-Collection/CUDASDK/"    ,"CUDASDK")
+    make_benchmarks("./Rodinia_bench.txt","Benchmark-Collection/Rodinia/"    ,"Rodinia")
+    make_benchmarks("./Poly_bench.txt"   ,"Benchmark-Collection/Polybench/"  ,"Polybench")

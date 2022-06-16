@@ -1,1 +1,0 @@
-./bfs -i graph_input.dat -o /home/vishwesh/Desktop/Register_Sharing_Pbm/Paraboil/parboil/benchmarks/bfs/build/cuda_default/output.txt
