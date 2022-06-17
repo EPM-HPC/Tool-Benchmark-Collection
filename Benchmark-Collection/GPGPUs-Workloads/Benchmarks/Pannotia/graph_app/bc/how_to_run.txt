@@ -1,1 +1,0 @@
-./bc ../../dataset/bc/1k_128k.gr 

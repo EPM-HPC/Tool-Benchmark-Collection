@@ -1,0 +1,11 @@
+#
+# Created by PENNANT
+#
+FORMAT
+type: ensight gold
+GEOMETRY
+model: ./test/leblanc/leblanc.geo
+VARIABLE
+scalar per element: zr ./test/leblanc/leblanc.zr
+scalar per element: ze ./test/leblanc/leblanc.ze
+scalar per element: zp ./test/leblanc/leblanc.zp
