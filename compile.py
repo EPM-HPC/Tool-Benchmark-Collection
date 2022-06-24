@@ -35,7 +35,7 @@ class cd:
 # make_benchmarks("./CUDASDK_bench.txt","Benchmark-Collection/CUDASDK","CUDA SDK")
 def make_benchmarks(bench_file,bench_dir,bench_name):
     print(bench_name+" Start")
-    # ====================CUDA SDK====================
+   
     done_num = 1
     tot_num =0
     dir_pair ={}
@@ -46,7 +46,8 @@ def make_benchmarks(bench_file,bench_dir,bench_name):
     for line in lines:
         line = line.strip('\n')
         line = line.replace(' ', '')
-        # cuda sdk dir structure
+        # sepecify main dir
+        #print(line)
         if(line[0].isdigit() and line[1]=='_'):
             #if main_dir in dir_pair:
                 #del dir_pair[main_dir]
@@ -57,6 +58,8 @@ def make_benchmarks(bench_file,bench_dir,bench_name):
             # for Polybench
             elif line== '0_poly_CUDA':
                 line='CUDA'
+            elif line=='0_gm_src':
+                line='gm_src'
                 
             dir_pair[line]=[]
             main_dir=line
@@ -92,3 +95,15 @@ if __name__ == "__main__":
     make_benchmarks("./CUDASDK_bench.txt","Benchmark-Collection/CUDASDK/"    ,"CUDASDK")
     make_benchmarks("./Rodinia_bench.txt","Benchmark-Collection/Rodinia/"    ,"Rodinia")
     make_benchmarks("./Poly_bench.txt"   ,"Benchmark-Collection/Polybench/"  ,"Polybench")
+    make_benchmarks("./Poly_bench.txt"   ,"Benchmark-Collection/Polybench/"  ,"Polybench")
+    make_benchmarks("./gpumicro_bench.txt","Benchmark-Collection/GPU-Microbenchmark/","GPU-Microbenchmark")
+    print("All Done")
+
+
+
+
+
+
+
+
+
