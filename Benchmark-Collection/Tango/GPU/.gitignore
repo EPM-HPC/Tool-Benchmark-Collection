@@ -1,0 +1,6 @@
+AlexNet/data/*
+CifarNet/data/*
+GRU/data/*
+LSTM/data/*
+ResNet/data/*
+SqueezeNet/data/*
