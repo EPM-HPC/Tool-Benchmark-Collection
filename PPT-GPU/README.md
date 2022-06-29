@@ -28,16 +28,16 @@ libglib2.0-dev : Depends: libglib2.0-0 (= 2.33.12+really2.32.4-5) but 2.42.1-1 i
 then install corresponding dependencies:
 
 ```bash
-apt-get install libglib2.0-0=2.33.12+really2.32.4-5
-apt-get install libglib2.0-bin= 2.33.12+really2.32.4-5
+sudo apt-get install libglib2.0-0=2.33.12+really2.32.4-5
+sudo apt-get install libglib2.0-bin= 2.33.12+really2.32.4-5
 ```
 
 ``gfortran`` is used for building  ``mpich`` and ``ninja`` is used for building``llvm``
 
 ```
-apt-get install gfortran
-apt-get install ninja-build
-apt-get install re2c
+sudo apt-get install gfortran
+sudo apt-get install ninja-build
+sudo apt-get install re2c
 ```
  also, make sure the ``nvcc -V`` output the ``CUDA version >=10.1``. As for the driver version:``<= 450.36``. In my case, I am using a ``Geforce GTX 1080 Ti`` card :
 
@@ -165,6 +165,7 @@ make && make install
 Add into the ``PATH``, add these lines to ``~/.bashrc``:
 
 ```bash
+export PATH=$PATH:/opt/llvm-11.0/bin
 export PATH=$PATH:/opt/cuda-flux/bin
 ```
 

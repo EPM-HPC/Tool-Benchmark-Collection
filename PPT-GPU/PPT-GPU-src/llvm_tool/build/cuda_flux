@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "CUDA Flux GPU profiler pass"
+set-alias opt "opt -load /opt/cuda-flux/lib/libcuda_flux_pass.so"
+prepend-path PATH /opt/cuda-flux/bin
+
+prereq llvm/11.0
+prereq cuda

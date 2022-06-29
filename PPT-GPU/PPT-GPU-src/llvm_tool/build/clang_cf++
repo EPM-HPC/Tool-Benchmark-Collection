@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+set -x
+clang++ -Xclang -load -Xclang /opt/cuda-flux/lib/libcuda_flux_pass.so -finline-functions $@

@@ -1,0 +1,4 @@
+/opt/cuda-flux/module/cuda_flux
+/opt/cuda-flux/bin/clang_cf++
+/opt/cuda-flux/bin/parseRegisterUsage.py
+/opt/cuda-flux/lib/libcuda_flux_pass.so
