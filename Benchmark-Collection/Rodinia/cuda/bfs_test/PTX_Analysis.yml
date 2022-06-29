@@ -1,0 +1,278 @@
+- Function:
+  Name: cudaMalloc
+  BlockCount: 1
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot0
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u64 %rd2 [cudaMalloc_param_1]
+    - ld.param.u64 %rd1 [cudaMalloc_param_0]
+    - st.u64 [%SP+0] %rd1
+    - st.u64 [%SP+8] %rd2
+    - mov.u32 %r1 999
+    - st.param.b32 [func_retval0+0] %r1
+    - ret
+- Function:
+  Name: cudaFuncGetAttributes
+  BlockCount: 1
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot1
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u64 %rd2 [cudaFuncGetAttributes_param_1]
+    - ld.param.u64 %rd1 [cudaFuncGetAttributes_param_0]
+    - st.u64 [%SP+0] %rd1
+    - st.u64 [%SP+8] %rd2
+    - mov.u32 %r1 999
+    - st.param.b32 [func_retval0+0] %r1
+    - ret
+- Function:
+  Name: cudaDeviceGetAttribute
+  BlockCount: 1
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot2
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u32 %r2 [cudaDeviceGetAttribute_param_2]
+    - ld.param.u32 %r1 [cudaDeviceGetAttribute_param_1]
+    - ld.param.u64 %rd1 [cudaDeviceGetAttribute_param_0]
+    - st.u64 [%SP+0] %rd1
+    - st.u32 [%SP+8] %r1
+    - st.u32 [%SP+12] %r2
+    - mov.u32 %r3 999
+    - st.param.b32 [func_retval0+0] %r3
+    - ret
+- Function:
+  Name: cudaGetDevice
+  BlockCount: 1
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot3
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u64 %rd1 [cudaGetDevice_param_0]
+    - st.u64 [%SP+0] %rd1
+    - mov.u32 %r1 999
+    - st.param.b32 [func_retval0+0] %r1
+    - ret
+- Function:
+  Name: cudaOccupancyMaxActiveBlocksPerMultiprocessor
+  BlockCount: 1
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot4
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u64 %rd3 [cudaOccupancyMaxActiveBlocksPerMultiprocessor_param_3]
+    - ld.param.u32 %r1 [cudaOccupancyMaxActiveBlocksPerMultiprocessor_param_2]
+    - ld.param.u64 %rd2 [cudaOccupancyMaxActiveBlocksPerMultiprocessor_param_1]
+    - ld.param.u64 %rd1 [cudaOccupancyMaxActiveBlocksPerMultiprocessor_param_0]
+    - st.u64 [%SP+0] %rd1
+    - st.u64 [%SP+8] %rd2
+    - st.u32 [%SP+16] %r1
+    - st.u64 [%SP+24] %rd3
+    - mov.u32 %r2 999
+    - st.param.b32 [func_retval0+0] %r2
+    - ret
+- Function:
+  Name: cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags
+  BlockCount: 1
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot5
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u32 %r2 [cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_param_4]
+    - ld.param.u64 %rd3 [cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_param_3]
+    - ld.param.u32 %r1 [cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_param_2]
+    - ld.param.u64 %rd2 [cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_param_1]
+    - ld.param.u64 %rd1 [cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_param_0]
+    - st.u64 [%SP+0] %rd1
+    - st.u64 [%SP+8] %rd2
+    - st.u32 [%SP+16] %r1
+    - st.u64 [%SP+24] %rd3
+    - st.u32 [%SP+32] %r2
+    - mov.u32 %r3 999
+    - st.param.b32 [func_retval0+0] %r3
+    - ret
+- Function:
+  Name: _Z6KernelP4NodePiPbS2_S2_S1_i
+  BlockCount: 10
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot6
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u32 %r1 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_6]
+    - ld.param.u64 %rd6 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_5]
+    - ld.param.u64 %rd5 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_4]
+    - ld.param.u64 %rd4 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_3]
+    - ld.param.u64 %rd3 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_2]
+    - ld.param.u64 %rd2 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_1]
+    - ld.param.u64 %rd1 [_Z6KernelP4NodePiPbS2_S2_S1_i_param_0]
+    - cvta.to.global.u64 %rd7 %rd6
+    - cvta.global.u64 %rd8 %rd7
+    - cvta.to.global.u64 %rd9 %rd5
+    - cvta.global.u64 %rd10 %rd9
+    - cvta.to.global.u64 %rd11 %rd4
+    - cvta.global.u64 %rd12 %rd11
+    - cvta.to.global.u64 %rd13 %rd3
+    - cvta.global.u64 %rd14 %rd13
+    - cvta.to.global.u64 %rd15 %rd2
+    - cvta.global.u64 %rd16 %rd15
+    - cvta.to.global.u64 %rd17 %rd1
+    - cvta.global.u64 %rd18 %rd17
+    - st.u64 [%SP+0] %rd18
+    - st.u64 [%SP+8] %rd16
+    - st.u64 [%SP+16] %rd14
+    - st.u64 [%SP+24] %rd12
+    - st.u64 [%SP+32] %rd10
+    - st.u64 [%SP+40] %rd8
+    - st.u32 [%SP+48] %r1
+    - mov.u32 %r2 %ctaid.x
+    - shl.b32 %r3 %r2 9
+    - mov.u32 %r4 %tid.x
+    - add.s32 %r5 %r3 %r4
+    - st.u32 [%SP+52] %r5
+    - ld.u32 %r6 [%SP+52]
+    - ld.u32 %r7 [%SP+48]
+    - setp.ge.s32 %p1 %r6 %r7
+    - bra LBB6_9
+    - bra.uni LBB6_1
+  - land.lhs.true:
+    - ld.u64 %rd19 [%SP+16]
+    - ld.s32 %rd20 [%SP+52]
+    - add.s64 %rd21 %rd19 %rd20
+    - ld.u8 %rs1 [..%rd21..]
+    - and.b16 %rs2 %rs1 1
+    - setp.eq.b16 %p2 %rs2 1
+    - bra LBB6_9
+    - bra.uni LBB6_2
+  - if.then:
+    - ld.u64 %rd22 [%SP+16]
+    - ld.s32 %rd23 [%SP+52]
+    - add.s64 %rd24 %rd22 %rd23
+    - mov.u16 %rs3 0
+    - st.u8 [..%rd24..] %rs3
+    - ld.u64 %rd25 [%SP+0]
+    - ld.s32 %rd26 [%SP+52]
+    - shl.b64 %rd27 %rd26 3
+    - add.s64 %rd28 %rd25 %rd27
+    - ld.u32 %r8 [..%rd28..]
+    - st.u32 [%SP+56] %r8
+    - bra.uni LBB6_3
+  - for.cond:
+    - ld.u32 %r9 [%SP+56]
+    - ld.u64 %rd29 [%SP+0]
+    - ld.s32 %rd30 [%SP+52]
+    - shl.b64 %rd31 %rd30 3
+    - add.s64 %rd32 %rd29 %rd31
+    - ld.u32 %r10 [..%rd32..+4]
+    - ld.u32 %r11 [..%rd32..]
+    - add.s32 %r12 %r10 %r11
+    - setp.ge.s32 %p3 %r9 %r12
+    - bra LBB6_8
+    - bra.uni LBB6_4
+  - for.body:
+    - ld.u64 %rd33 [%SP+8]
+    - ld.s32 %rd34 [%SP+56]
+    - shl.b64 %rd35 %rd34 2
+    - add.s64 %rd36 %rd33 %rd35
+    - ld.u32 %r13 [..%rd36..]
+    - st.u32 [%SP+60] %r13
+    - ld.u64 %rd37 [%SP+32]
+    - ld.s32 %rd38 [%SP+60]
+    - add.s64 %rd39 %rd37 %rd38
+    - ld.u8 %rs4 [..%rd39..]
+    - and.b16 %rs5 %rs4 1
+    - setp.eq.b16 %p4 %rs5 1
+    - bra LBB6_6
+    - bra.uni LBB6_5
+  - if.then18:
+    - ld.u64 %rd40 [%SP+40]
+    - ld.s32 %rd41 [%SP+52]
+    - shl.b64 %rd42 %rd41 2
+    - add.s64 %rd43 %rd40 %rd42
+    - ld.u32 %r14 [..%rd43..]
+    - add.s32 %r15 %r14 1
+    - ld.s32 %rd44 [%SP+60]
+    - shl.b64 %rd45 %rd44 2
+    - add.s64 %rd46 %rd40 %rd45
+    - st.u32 [..%rd46..] %r15
+    - ld.u64 %rd47 [%SP+24]
+    - ld.s32 %rd48 [%SP+60]
+    - add.s64 %rd49 %rd47 %rd48
+    - mov.u16 %rs6 1
+    - st.u8 [..%rd49..] %rs6
+    - bra.uni LBB6_6
+  - if.end:
+    - bra.uni LBB6_7
+  - for.inc:
+    - ld.u32 %r16 [%SP+56]
+    - add.s32 %r17 %r16 1
+    - st.u32 [%SP+56] %r17
+    - bra.uni LBB6_3
+  - for.end:
+    - bra.uni LBB6_9
+  - if.end26:
+    - ret
+- Function:
+  Name: _Z7Kernel2PbS_S_S_i
+  BlockCount: 4
+  Blocks: 
+  - entry:
+    - mov.u64 %SPL __local_depot7
+    - cvta.local.u64 %SP %SPL
+    - ld.param.u32 %r1 [_Z7Kernel2PbS_S_S_i_param_4]
+    - ld.param.u64 %rd4 [_Z7Kernel2PbS_S_S_i_param_3]
+    - ld.param.u64 %rd3 [_Z7Kernel2PbS_S_S_i_param_2]
+    - ld.param.u64 %rd2 [_Z7Kernel2PbS_S_S_i_param_1]
+    - ld.param.u64 %rd1 [_Z7Kernel2PbS_S_S_i_param_0]
+    - cvta.to.global.u64 %rd5 %rd4
+    - cvta.global.u64 %rd6 %rd5
+    - cvta.to.global.u64 %rd7 %rd3
+    - cvta.global.u64 %rd8 %rd7
+    - cvta.to.global.u64 %rd9 %rd2
+    - cvta.global.u64 %rd10 %rd9
+    - cvta.to.global.u64 %rd11 %rd1
+    - cvta.global.u64 %rd12 %rd11
+    - st.u64 [%SP+0] %rd12
+    - st.u64 [%SP+8] %rd10
+    - st.u64 [%SP+16] %rd8
+    - st.u64 [%SP+24] %rd6
+    - st.u32 [%SP+32] %r1
+    - mov.u32 %r2 %ctaid.x
+    - shl.b32 %r3 %r2 9
+    - mov.u32 %r4 %tid.x
+    - add.s32 %r5 %r3 %r4
+    - st.u32 [%SP+36] %r5
+    - ld.u32 %r6 [%SP+36]
+    - ld.u32 %r7 [%SP+32]
+    - setp.ge.s32 %p1 %r6 %r7
+    - bra LBB7_3
+    - bra.uni LBB7_1
+  - land.lhs.true:
+    - ld.u64 %rd13 [%SP+8]
+    - ld.s32 %rd14 [%SP+36]
+    - add.s64 %rd15 %rd13 %rd14
+    - ld.u8 %rs1 [..%rd15..]
+    - and.b16 %rs2 %rs1 1
+    - setp.eq.b16 %p2 %rs2 1
+    - bra LBB7_3
+    - bra.uni LBB7_2
+  - if.then:
+    - ld.u64 %rd16 [%SP+0]
+    - ld.s32 %rd17 [%SP+36]
+    - add.s64 %rd18 %rd16 %rd17
+    - mov.u16 %rs3 1
+    - st.u8 [..%rd18..] %rs3
+    - ld.u64 %rd19 [%SP+16]
+    - ld.s32 %rd20 [%SP+36]
+    - add.s64 %rd21 %rd19 %rd20
+    - st.u8 [..%rd21..] %rs3
+    - ld.u64 %rd22 [%SP+24]
+    - st.u8 [..%rd22..] %rs3
+    - ld.u64 %rd23 [%SP+8]
+    - ld.s32 %rd24 [%SP+36]
+    - add.s64 %rd25 %rd23 %rd24
+    - mov.u16 %rs4 0
+    - st.u8 [..%rd25..] %rs4
+    - bra.uni LBB7_3
+  - if.end:
+    - ret

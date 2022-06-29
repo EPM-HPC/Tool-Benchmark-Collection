@@ -1,0 +1,499 @@
+mov.u64 
+cvta.local.u64 0 
+ld.param.u32 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+cvta.to.global.u64 3 
+cvta.global.u64 9 
+cvta.to.global.u64 4 
+cvta.global.u64 11 
+cvta.to.global.u64 5 
+cvta.global.u64 13 
+cvta.to.global.u64 6 
+cvta.global.u64 15 
+cvta.to.global.u64 7 
+cvta.global.u64 17 
+cvta.to.global.u64 8 
+cvta.global.u64 19 
+st.u64 20 
+st.u64 18 
+st.u64 16 
+st.u64 14 
+st.u64 12 
+st.u64 10 
+st.u32 2 
+mov.u32 
+shl.b32 28 
+mov.u32 
+add.s32 29 30 
+st.u32 31 
+ld.u32 
+ld.u32 
+setp.ge.s32 33 34 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+add.s64 38 39 
+ld.u8 40 
+and.b16 41 
+setp.eq.b16 42 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+add.s64 46 47 
+mov.u16 
+st.u8 49 48 
+ld.u64 
+ld.s32 
+shl.b64 52 
+add.s64 51 53 
+ld.u32 54 
+st.u32 55 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 60 
+add.s64 59 61 
+ld.u32 62 
+ld.u32 62 
+add.s32 63 64 
+setp.ge.s32 58 65 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 70 
+add.s64 69 71 
+ld.u32 72 
+st.u32 73 
+ld.u64 
+ld.s32 
+add.s64 75 76 
+ld.u8 77 
+and.b16 78 
+setp.eq.b16 79 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 84 
+add.s64 83 85 
+ld.u32 86 
+add.s32 87 
+ld.s32 
+shl.b64 89 
+add.s64 83 90 
+st.u32 88 91 
+ld.u64 
+ld.s32 
+add.s64 93 94 
+mov.u16 
+st.u8 96 95 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 100 
+st.u32 101 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 106 
+add.s64 105 107 
+ld.u32 108 
+ld.u32 108 
+add.s32 109 110 
+setp.ge.s32 104 111 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 116 
+add.s64 115 117 
+ld.u32 118 
+st.u32 119 
+ld.u64 
+ld.s32 
+add.s64 121 122 
+ld.u8 123 
+and.b16 124 
+setp.eq.b16 125 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 130 
+add.s64 129 131 
+ld.u32 132 
+add.s32 133 
+ld.s32 
+shl.b64 135 
+add.s64 129 136 
+st.u32 134 137 
+ld.u64 
+ld.s32 
+add.s64 139 140 
+mov.u16 
+st.u8 142 141 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 146 
+st.u32 147 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 152 
+add.s64 151 153 
+ld.u32 154 
+ld.u32 154 
+add.s32 155 156 
+setp.ge.s32 150 157 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 162 
+add.s64 161 163 
+ld.u32 164 
+st.u32 165 
+ld.u64 
+ld.s32 
+add.s64 167 168 
+ld.u8 169 
+and.b16 170 
+setp.eq.b16 171 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 176 
+add.s64 175 177 
+ld.u32 178 
+add.s32 179 
+ld.s32 
+shl.b64 181 
+add.s64 175 182 
+st.u32 180 183 
+ld.u64 
+ld.s32 
+add.s64 185 186 
+mov.u16 
+st.u8 188 187 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 192 
+st.u32 193 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 198 
+add.s64 197 199 
+ld.u32 200 
+ld.u32 200 
+add.s32 201 202 
+setp.ge.s32 196 203 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 208 
+add.s64 207 209 
+ld.u32 210 
+st.u32 211 
+ld.u64 
+ld.s32 
+add.s64 213 214 
+ld.u8 215 
+and.b16 216 
+setp.eq.b16 217 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 222 
+add.s64 221 223 
+ld.u32 224 
+add.s32 225 
+ld.s32 
+shl.b64 227 
+add.s64 221 228 
+st.u32 226 229 
+ld.u64 
+ld.s32 
+add.s64 231 232 
+mov.u16 
+st.u8 234 233 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 238 
+st.u32 239 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 244 
+add.s64 243 245 
+ld.u32 246 
+ld.u32 246 
+add.s32 247 248 
+setp.ge.s32 242 249 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 254 
+add.s64 253 255 
+ld.u32 256 
+st.u32 257 
+ld.u64 
+ld.s32 
+add.s64 259 260 
+ld.u8 261 
+and.b16 262 
+setp.eq.b16 263 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 268 
+add.s64 267 269 
+ld.u32 270 
+add.s32 271 
+ld.s32 
+shl.b64 273 
+add.s64 267 274 
+st.u32 272 275 
+ld.u64 
+ld.s32 
+add.s64 277 278 
+mov.u16 
+st.u8 280 279 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 284 
+st.u32 285 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 290 
+add.s64 289 291 
+ld.u32 292 
+ld.u32 292 
+add.s32 293 294 
+setp.ge.s32 288 295 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 300 
+add.s64 299 301 
+ld.u32 302 
+st.u32 303 
+ld.u64 
+ld.s32 
+add.s64 305 306 
+ld.u8 307 
+and.b16 308 
+setp.eq.b16 309 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 314 
+add.s64 313 315 
+ld.u32 316 
+add.s32 317 
+ld.s32 
+shl.b64 319 
+add.s64 313 320 
+st.u32 318 321 
+ld.u64 
+ld.s32 
+add.s64 323 324 
+mov.u16 
+st.u8 326 325 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 330 
+st.u32 331 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 336 
+add.s64 335 337 
+ld.u32 338 
+ld.u32 338 
+add.s32 339 340 
+setp.ge.s32 334 341 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 346 
+add.s64 345 347 
+ld.u32 348 
+st.u32 349 
+ld.u64 
+ld.s32 
+add.s64 351 352 
+ld.u8 353 
+and.b16 354 
+setp.eq.b16 355 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 360 
+add.s64 359 361 
+ld.u32 362 
+add.s32 363 
+ld.s32 
+shl.b64 365 
+add.s64 359 366 
+st.u32 364 367 
+ld.u64 
+ld.s32 
+add.s64 369 370 
+mov.u16 
+st.u8 372 371 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 376 
+st.u32 377 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 382 
+add.s64 381 383 
+ld.u32 384 
+ld.u32 384 
+add.s32 385 386 
+setp.ge.s32 380 387 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 392 
+add.s64 391 393 
+ld.u32 394 
+st.u32 395 
+ld.u64 
+ld.s32 
+add.s64 397 398 
+ld.u8 399 
+and.b16 400 
+setp.eq.b16 401 
+bra 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 406 
+st.u32 407 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 412 
+add.s64 411 413 
+ld.u32 414 
+ld.u32 414 
+add.s32 415 416 
+setp.ge.s32 410 417 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 422 
+add.s64 421 423 
+ld.u32 424 
+st.u32 425 
+ld.u64 
+ld.s32 
+add.s64 427 428 
+ld.u8 429 
+and.b16 430 
+setp.eq.b16 431 
+bra 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 436 
+st.u32 437 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 442 
+add.s64 441 443 
+ld.u32 444 
+ld.u32 444 
+add.s32 445 446 
+setp.ge.s32 440 447 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 452 
+add.s64 451 453 
+ld.u32 454 
+st.u32 455 
+ld.u64 
+ld.s32 
+add.s64 457 458 
+ld.u8 459 
+and.b16 460 
+setp.eq.b16 461 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+shl.b64 466 
+add.s64 465 467 
+ld.u32 468 
+add.s32 469 
+ld.s32 
+shl.b64 471 
+add.s64 465 472 
+st.u32 470 473 
+ld.u64 
+ld.s32 
+add.s64 475 476 
+mov.u16 
+st.u8 478 477 
+bra.uni 
+bra.uni 
+ld.u32 
+add.s32 482 
+st.u32 483 
+bra.uni 
+ld.u32 
+ld.u64 
+ld.s32 
+shl.b64 488 
+add.s64 487 489 
+ld.u32 490 
+ld.u32 490 
+add.s32 491 492 
+setp.ge.s32 486 493 
+bra 
+bra.uni 
+bra.uni 
+ret 

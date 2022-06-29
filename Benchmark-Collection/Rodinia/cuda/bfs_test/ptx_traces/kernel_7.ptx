@@ -1,0 +1,47 @@
+mov.u64 
+cvta.local.u64 0 
+ld.param.u32 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+cvta.to.global.u64 3 
+cvta.global.u64 9 
+cvta.to.global.u64 4 
+cvta.global.u64 11 
+cvta.to.global.u64 5 
+cvta.global.u64 13 
+cvta.to.global.u64 6 
+cvta.global.u64 15 
+cvta.to.global.u64 7 
+cvta.global.u64 17 
+cvta.to.global.u64 8 
+cvta.global.u64 19 
+st.u64 20 
+st.u64 18 
+st.u64 16 
+st.u64 14 
+st.u64 12 
+st.u64 10 
+st.u32 2 
+mov.u32 
+shl.b32 28 
+mov.u32 
+add.s32 29 30 
+st.u32 31 
+ld.u32 
+ld.u32 
+setp.ge.s32 33 34 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+add.s64 38 39 
+ld.u8 40 
+and.b16 41 
+setp.eq.b16 42 
+bra 
+bra.uni 
+ret 
