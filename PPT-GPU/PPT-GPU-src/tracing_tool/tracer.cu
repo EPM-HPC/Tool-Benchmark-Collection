@@ -8,6 +8,7 @@
 #include <map>
 #include <vector>
 #include <unordered_set>
+#include <unordered_map>
 #include <fstream>
 
 #include "utils/utils.h"
@@ -518,7 +519,7 @@ void *recv_thread_fun(void *) {
 
 void nvbit_at_ctx_init(CUcontext ctx) {
     recv_thread_started = true;
-    channel_host.init(0, CHANNEL_SIZE, &channel_dev, NULL);
+    channel_host.init(0, CHANNEL_SIZE, &channel_dev, NULL,NULL);
     pthread_create(&recv_thread, NULL, recv_thread_fun, NULL);
 }
 

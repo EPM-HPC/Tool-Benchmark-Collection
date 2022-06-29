@@ -102,6 +102,7 @@ class ChannelDev {
         assert(*doorbell == 0);
         /* notify current buffer has something*/
         *doorbell = nbytes;
+        __threadfence_system();
 
         /* wait for host to release the doorbell */
         while (*doorbell != 0)
@@ -159,7 +160,7 @@ class ChannelHost {
     ChannelHost() {}
 
     void init(int id, int buff_size, ChannelDev* ch_dev,
-              void* (*thread_fun)(void*), void* args = NULL) {
+              void* (*thread_fun)(ChannelHost *)) {
         this->buff_size = buff_size;
         this->id = id;
         /* get device properties */
@@ -193,7 +194,7 @@ class ChannelHost {
         dev_buff_read_head = dev_buff;
         if (thread_fun != NULL) {
             thread_started = true;
-            pthread_create(&thread, NULL, (void* (*)(void*))thread_fun, args);
+            pthread_create(&thread, NULL, (void*(*)(void*))thread_fun,(void *)this);
         } else {
             thread_started = false;
         }
