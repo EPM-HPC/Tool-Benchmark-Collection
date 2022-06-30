@@ -13,11 +13,11 @@
 #include <sys/time.h>
 
 #include <cuda.h>
-// #include <cuda_runtime.h>
-// #include <cuda_runtime_api.h>
+#include <cuda_runtime.h>
+#include <cuda_runtime_api.h>
 
-// #include <cuda/cuda.h>
-// #include <cuda/cuda_runtime_api.h>
+//#include <cuda/cuda.h>
+//#include <cuda/cuda_runtime_api.h>
 
 #define SAMPLE_TIME_MS_DEFAULT  16
 #define END_TIME_S_DEFAULT  0

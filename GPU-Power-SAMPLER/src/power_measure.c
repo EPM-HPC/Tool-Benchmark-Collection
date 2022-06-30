@@ -1,5 +1,5 @@
 #include "power_measure.h"
-
+#include <nvml.h>
 #define ADDITIONAL_INFO "\n\
 ADDITIONAL INFORMATION\n\
 \n\
