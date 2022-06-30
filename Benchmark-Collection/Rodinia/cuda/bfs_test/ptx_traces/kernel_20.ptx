@@ -37,3 +37,42 @@ setp.eq.b16 34
 bra 
 bra.uni 
 ret 
+mov.u64 
+cvta.local.u64 0 
+ld.param.u32 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+ld.param.u64 
+cvta.to.global.u64 3 
+cvta.global.u64 7 
+cvta.to.global.u64 4 
+cvta.global.u64 9 
+cvta.to.global.u64 5 
+cvta.global.u64 11 
+cvta.to.global.u64 6 
+cvta.global.u64 13 
+st.u64 14 
+st.u64 12 
+st.u64 10 
+st.u64 8 
+st.u32 2 
+mov.u32 
+shl.b32 20 
+mov.u32 
+add.s32 21 22 
+st.u32 23 
+ld.u32 
+ld.u32 
+setp.ge.s32 25 26 
+bra 
+bra.uni 
+ld.u64 
+ld.s32 
+add.s64 30 31 
+ld.u8 32 
+and.b16 33 
+setp.eq.b16 34 
+bra 
+bra.uni 
+ret 

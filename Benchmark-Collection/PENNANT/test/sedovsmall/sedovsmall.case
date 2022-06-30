@@ -1,0 +1,11 @@
+#
+# Created by PENNANT
+#
+FORMAT
+type: ensight gold
+GEOMETRY
+model: test/sedovsmall/sedovsmall.geo
+VARIABLE
+scalar per element: zr test/sedovsmall/sedovsmall.zr
+scalar per element: ze test/sedovsmall/sedovsmall.ze
+scalar per element: zp test/sedovsmall/sedovsmall.zp

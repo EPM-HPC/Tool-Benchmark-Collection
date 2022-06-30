@@ -1,7 +1,7 @@
-GENCODE_SM70 := -gencode=arch=compute_70,code=\"sm_70,compute_70\"
-GENCODE_SM75 := -gencode=arch=compute_75,code=\"sm_75,compute_75\"
-
-ARCH = $(GENCODE_SM70) $(GENCODE_SM75)
+#GENCODE_SM70 := -gencode=arch=compute_70,code=\"sm_70,compute_70\"
+#GENCODE_SM75 := -gencode=arch=compute_75,code=\"sm_75,compute_75\"
+GENCODE_SM86 := -gencode=arch=compute_86,code=\"sm_86,compute_86\"
+ARCH =$(GENCODE_SM86) $(GENCODE_SM70) $(GENCODE_SM75)
 
 BUILDDIR := build
 PRODUCT := pennant

@@ -1,0 +1,11 @@
+#
+# Created by PENNANT
+#
+FORMAT
+type: ensight gold
+GEOMETRY
+model: test/leblancbig/leblancbig.geo
+VARIABLE
+scalar per element: zr test/leblancbig/leblancbig.zr
+scalar per element: ze test/leblancbig/leblancbig.ze
+scalar per element: zp test/leblancbig/leblancbig.zp

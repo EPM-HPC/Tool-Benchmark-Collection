@@ -5,7 +5,7 @@ INCLUDES=
 export LD_LIBRARY_PATH=/opt/cuda/lib:/opt/cuda/lib64:$LD_LIBRARY_PATH
 LIBS= -lcuda
 
-ARCH = 52
+ARCH = 86
 FLAGS_NV= -gencode=arch=compute_$(ARCH),code=compute_$(ARCH)
 
 SRCS = $(wildcard *.cu)
