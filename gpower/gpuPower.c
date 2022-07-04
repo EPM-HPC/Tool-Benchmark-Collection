@@ -36,6 +36,7 @@
 
 //===================================================================
 #include <nvml.h>
+
 #define ADDITIONAL_INFO "\n\
 ADDITIONAL INFORMATION\n\
 \n\
@@ -73,7 +74,10 @@ UTILIZATION\n\
 \n\
     -h : shows 'USAGE' section of this file\n\
 \n\
-    -i : shows 'ADITIONAL INFORMATION' section of this file\n\n"
+    -i : shows 'ADITIONAL INFORMATION' section of this file\n\
+\n\
+    -f : specify which file to store the output info\n\n"
+
 
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++

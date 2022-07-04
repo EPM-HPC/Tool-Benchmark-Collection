@@ -162,10 +162,12 @@ int main(int argc, char **argv)
     checkCudaErrors(cudaDeviceSynchronize());
     sdkStopTimer(&hTimer);
     gpuTime = sdkGetTimerValue(&hTimer) / NUM_ITERATIONS;
-
+    FILE * timefile = fopen("bs_time.txt","a+");
     //Both call and put is calculated
     printf("Options count             : %i     \n", 2 * OPT_N);
     printf("BlackScholesGPU() time    : %f msec\n", gpuTime);
+    fprintf(timefile,"%f \n",gpuTime);
+    fclose(timefile);
     printf("Effective memory bandwidth: %f GB/s\n", ((double)(5 * OPT_N * sizeof(float)) * 1E-9) / (gpuTime * 1E-3));
     printf("Gigaoptions per second    : %f     \n\n", ((double)(2 * OPT_N) * 1E-9) / (gpuTime * 1E-3));
 
