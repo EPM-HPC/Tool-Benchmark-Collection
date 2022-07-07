@@ -614,9 +614,13 @@ int main(int argc, char **argv)
     time_aux.tv_sec = endTimeS;
 
     char * setFreq[20];
-    snprintf(setFreq,sizeof(setFreq),"nvidia-smi -lgc %d",oFreq);
-    printf("cmd :%s\n",setFreq);
-    system(setFreq);
+    if(oFreq!=0){
+        snprintf(setFreq,sizeof(setFreq),"nvidia-smi -lgc %d",oFreq);
+        printf("cmd :%s\n",setFreq);
+        system(setFreq);
+    }else{
+        printf("auto mode\n");
+    }
 
     // Initializations
     if (initialize() != 0)
