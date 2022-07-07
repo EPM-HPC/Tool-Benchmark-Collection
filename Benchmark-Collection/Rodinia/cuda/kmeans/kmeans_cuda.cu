@@ -6,6 +6,9 @@
 
 #include <omp.h>
 
+#include<helper_functions.h>
+#include<helper_cuda.h>
+
 #include <cuda.h>
 
 #define THREADS_PER_DIM 16
@@ -40,6 +43,7 @@ float  *clusters_d;													/* cluster centers on the device */
 float  *block_clusters_d;											/* per block calculation of cluster centers */
 int    *block_deltas_d;												/* per block calculation of deltas */
 
+const int niter = 2500;
 
 /* -------------- allocateMemory() ------------------- */
 /* allocate device memory, calculate number of blocks and threads, and invert the data array */
@@ -194,6 +198,12 @@ kmeansCuda(float  **feature,				/* in: [npoints][nfeatures] */
     dim3  grid( num_blocks_perdim, num_blocks_perdim );
     dim3  threads( num_threads_perdim*num_threads_perdim );
     
+	StopWatchInterface *timer=NULL;
+	sdkCreateTimer(&timer);
+	sdkResetTimer(&timer);
+	sdkStartTimer(&timer);
+
+	for(int inner=0;inner<niter;inner++){
 	/* execute the kernel */
     kmeansPoint<<< grid, threads >>>( feature_d,
                                       nfeatures,
@@ -203,9 +213,15 @@ kmeansCuda(float  **feature,				/* in: [npoints][nfeatures] */
                                       clusters_d,
 									  block_clusters_d,
 									  block_deltas_d);
-
-	cudaThreadSynchronize();
-
+	}
+	//cudaThreadSynchronize();
+	cudaDeviceSynchronize();
+	sdkStopTimer(&timer);
+	double gtime = sdkGetTimerValue(&timer)/niter;
+	FILE* timefile = fopen("time_kmeans.txt","a+");
+	fprintf(timefile,"%f \n",gtime);
+	fclose(timefile);
+	sdkDeleteTimer(&timer);
 	/* copy back membership (device to host) */
 	cudaMemcpy(membership_new, membership_d, npoints*sizeof(int), cudaMemcpyDeviceToHost);	
 

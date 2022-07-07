@@ -14,7 +14,7 @@ def readFreq(configFile):
     for i in allfreq:
         freqs.append(i)
 def samplePower(SMf):
-    command='./cmd.sh '+ str(SMf)
+    command='sudo ./gpuPower -d 0 -o '+ str(SMf) + '-e -s 5 -a ./kmeans -o -i kdd_cup '
     print(command)
     subprocess.call(command,shell=True)
 
@@ -25,4 +25,5 @@ if __name__ == "__main__":
         for f in freqs:
             #print(len(freqs))
             samplePower(f)
-        time.sleep(10)
+            time.sleep(3)
+        sleep(5)
