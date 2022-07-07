@@ -6,7 +6,7 @@ CC_FLAGS = -g -fopenmp -O2 -w
 
 # CUDA compiler
 NVCC = $(CUDA_DIR)/bin/nvcc
-NVCC_FLAGS = -I$(CUDA_DIR)/include 
+NVCC_FLAGS =-I$(CUDA_DIR)/include -I../../common/inc
 
 # 'make dbg=1' enables NVCC debugging
 ifeq ($(dbg),1)
@@ -23,9 +23,9 @@ endif
 all: pre kmeans
 
 pre: kmeans.c
-	gcc -g -w -fopenmp -O2  -c kmeans.c
+	gcc -g  -fopenmp -O2  -c kmeans.c
 kmeans: cluster.o getopt.o kmeans.o kmeans_clustering.o kmeans_cuda.o rmse.o
-	$(CC) $(CC_FLAGS) cluster.o getopt.o kmeans.o kmeans_clustering.o kmeans_cuda.o rmse.o -o kmeans -L$(CUDA_LIB_DIR)  -lcudart -lm
+	$(CC) $(CC_FLAGS) cluster.o getopt.o kmeans.o kmeans_clustering.o kmeans_cuda.o rmse.o -o kmeans -L$(CUDA_LIB_DIR) -lcuda  -lcudart -lm
 
 %.o: %.[ch]
 	$(CC) $(CC_FLAGS) $< -c
