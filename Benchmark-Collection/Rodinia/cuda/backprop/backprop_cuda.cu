@@ -48,7 +48,7 @@ double gettime() {
 unsigned int num_threads = 0;
 unsigned int num_blocks = 0;
 
-const int niters = 50000;
+const int niters = 5000000;
 ////////////////////////////////////////////////////////////////////////////////
 // Program main
 ////////////////////////////////////////////////////////////////////////////////
@@ -130,16 +130,16 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   sdkCreateTimer(&hTimer);
   sdkResetTimer(&hTimer);
   sdkStartTimer(&hTimer);
-  for(int inner=0;inner<niters;inner++){}
-  bpnn_layerforward_CUDA<<< grid, threads >>>(input_cuda,
-	                                          output_hidden_cuda,
+  //for(int inner=0;inner<niters;inner++){
+  	bpnn_layerforward_CUDA<<< grid, threads >>>(input_cuda,
+	                                         output_hidden_cuda,
 											  input_hidden_cuda,
 											  hidden_partial_sum,
 											  in,
 											  hid);
-  }
-  //cudaThreadSynchronize();
-  cudaDeviceSynchronize();
+  //}
+  cudaThreadSynchronize();
+  //cudaDeviceSynchronize();
   sdkStopTimer(&hTimer);
   float gpuTime = sdkGetTimerValue(&hTimer) / niters;
   printf("%f | GPU Time: %f\n", sdkGetTimerValue(&hTimer), gpuTime);
