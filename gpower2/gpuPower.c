@@ -123,16 +123,15 @@ unsigned int core_clock, mem_clock;
 
 // store core information like freqency,avgPower,Energy,GPU-duration
 
-
-#define gen_datafile_name(app) "/home/wwr/Desktop/jasonyang/Tool-Benchmark-Collection/Benchmark-Collection/experiment-data/"#app"_data.txt"
+//#define gen_datafile_name(app) "/home/wwr/Desktop/jasonyang/Tool-Benchmark-Collection/Benchmark-Collection/"#app".txt"
 
 
 
 
 
 char *coreInfo[100];
-char appname[20];
-char *outputFile[100];
+char appname[50];
+char *outputFile[200];
 int oFreq;
 float avgPower;
 float consumEnergy;
@@ -358,9 +357,11 @@ float correctedPowerSerial()
         fclose(fp);
 
     fclose(fp2);
-    char* dataFile = gen_datafile_name(appname);
+    snprintf(outputFile,sizeof(outputFile),"/home/wwr/Desktop/jasonyang/Tool-Benchmark-Collection/Benchmark-Collection/experiment-data/%s_data.txt",appname);	
+    printf("%s\n",outputFile);
     snprintf(coreInfo,sizeof(coreInfo),"%d %.3f %.3f %.3f \n",oFreq,avgPower,consumEnergy,GPU_duration);
-    FILE* ofp = fopen(dataFile,"a+");
+    printf("%s\n",coreInfo);
+    FILE* ofp = fopen(outputFile,"a+");
     fprintf(ofp,coreInfo);
     fclose(ofp);
 
