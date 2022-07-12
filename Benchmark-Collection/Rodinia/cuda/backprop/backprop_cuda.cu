@@ -126,7 +126,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
 
 
 
-  
+  StopWatchInterface *hTimer = NULL;
   sdkCreateTimer(&hTimer);
   sdkResetTimer(&hTimer);
   sdkStartTimer(&hTimer);
