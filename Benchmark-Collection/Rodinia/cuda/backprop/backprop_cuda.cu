@@ -12,6 +12,9 @@
 #include "backprop_cuda_kernel.cu"
 #include "backprop.h"
 
+#include <helper_functions.h>   // helper functions for string parsing
+#include <helper_cuda.h>        // helper functions CUDA error checking and initialization
+
 ////////////////////////////////////////////////////////////////////////////////
 
 extern "C"
@@ -45,6 +48,7 @@ double gettime() {
 unsigned int num_threads = 0;
 unsigned int num_blocks = 0;
 
+const int niters = 50000;
 ////////////////////////////////////////////////////////////////////////////////
 // Program main
 ////////////////////////////////////////////////////////////////////////////////
@@ -119,16 +123,31 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   cudaMemcpy(input_hidden_cuda, input_weights_one_dim, (in + 1) * (hid + 1) * sizeof(float), cudaMemcpyHostToDevice);
 
   
+
+
+
   
+  sdkCreateTimer(&hTimer);
+  sdkResetTimer(&hTimer);
+  sdkStartTimer(&hTimer);
+  for(int inner=0;inner<niters;inner++){}
   bpnn_layerforward_CUDA<<< grid, threads >>>(input_cuda,
 	                                          output_hidden_cuda,
 											  input_hidden_cuda,
 											  hidden_partial_sum,
 											  in,
 											  hid);
- 
-  cudaThreadSynchronize();
-  
+  }
+  //cudaThreadSynchronize();
+  cudaDeviceSynchronize();
+  sdkStopTimer(&hTimer);
+  float gpuTime = sdkGetTimerValue(&hTimer) / niters;
+  printf("%f | GPU Time: %f\n", sdkGetTimerValue(&hTimer), gpuTime);
+
+
+
+
+
   cudaError_t error = cudaGetLastError();
 	if (error != cudaSuccess) {
 		printf("bpnn kernel error: %s\n", cudaGetErrorString(error));
@@ -169,6 +188,14 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   cudaMemcpy(input_hidden_cuda, input_weights_one_dim, (in + 1) * (hid + 1) * sizeof(float), cudaMemcpyHostToDevice);
 
 
+
+
+
+
+
+  sdkResetTimer(&hTimer);
+  sdkStartTimer(&hTimer);
+  for(int inner=0;inner<niters;inner++){
   bpnn_adjust_weights_cuda<<< grid, threads >>>(hidden_delta_cuda,  
 												hid, 
 												input_cuda, 
@@ -176,6 +203,18 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
 												input_hidden_cuda, 
 												input_prev_weights_cuda
 												);
+  }
+  cudaDeviceSynchronize();
+  sdkStopTimer(&hTimer);
+  gpuTime = sdkGetTimerValue(&hTimer) / niters;
+  printf("%f | GPU Time: %f\n", sdkGetTimerValue(&hTimer), gpuTime);
+  sdkDeleteTimer(&hTimer);
+
+
+
+
+
+
 
   cudaMemcpy(net->input_units, input_cuda, (in + 1) * sizeof(float), cudaMemcpyDeviceToHost);
   cudaMemcpy(input_weights_one_dim, input_hidden_cuda, (in + 1) * (hid + 1) * sizeof(float), cudaMemcpyDeviceToHost);
