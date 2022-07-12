@@ -1,0 +1,5 @@
+Average Power [W],61.27,Max Power [W],114.37,Sampling Duration [ms],18182.661000, Current frequency,(0,0) MHz,GPU active duration [ms],18182.661000	Energy: 1114.037 J
+Average Power [W],90.40,Max Power [W],114.81,Sampling Duration [ms],10693.472000, Current frequency,(0,0) MHz,GPU active duration [ms],10693.472000	Energy: 966.692 J
+Average Power [W],96.79,Max Power [W],114.37,Sampling Duration [ms],9067.453000, Current frequency,(0,0) MHz,GPU active duration [ms],9067.453000	Energy: 877.646 J
+Average Power [W],85.53,Max Power [W],113.93,Sampling Duration [ms],12098.804000, Current frequency,(0,0) MHz,GPU active duration [ms],12098.804000	Energy: 1034.865 J
+Average Power [W],96.37,Max Power [W],114.23,Sampling Duration [ms],9884.269000, Current frequency,(0,0) MHz,GPU active duration [ms],9884.269000	Energy: 952.568 J
