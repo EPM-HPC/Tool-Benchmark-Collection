@@ -124,7 +124,7 @@ unsigned int core_clock, mem_clock;
 // store core information like freqency,avgPower,Energy,GPU-duration
 
 
-#define gen_datafile_name(app) "/home/wwr/Desktop/jasonyang/Tool-Benchmark-Collection/Benchmark-Collection/"#app"_data.txt"
+#define gen_datafile_name(app) "/home/wwr/Desktop/jasonyang/Tool-Benchmark-Collection/Benchmark-Collection/experiment-data/"#app"_data.txt"
 
 
 
