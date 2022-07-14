@@ -130,7 +130,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   sdkCreateTimer(&hTimer);
   sdkResetTimer(&hTimer);
   sdkStartTimer(&hTimer);
-  for(int inner=0;inner<niters;inner++){}
+  for(int inner=0;inner<niters;inner++){
   bpnn_layerforward_CUDA<<< grid, threads >>>(input_cuda,
 	                                          output_hidden_cuda,
 											  input_hidden_cuda,
