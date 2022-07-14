@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <assert.h>
-
+#include <unistd.h>
 #include <omp.h>
 
 #include<helper_functions.h>
@@ -43,7 +43,7 @@ float  *clusters_d;													/* cluster centers on the device */
 float  *block_clusters_d;											/* per block calculation of cluster centers */
 int    *block_deltas_d;												/* per block calculation of deltas */
 
-const int niter = 2500;
+const int niter = 1250;
 
 /* -------------- allocateMemory() ------------------- */
 /* allocate device memory, calculate number of blocks and threads, and invert the data array */
@@ -73,10 +73,25 @@ void allocateMemory(int npoints, int nfeatures, int nclusters, float **features)
 	cudaMalloc((void**) &feature_flipped_d, npoints*nfeatures*sizeof(float));
 	cudaMemcpy(feature_flipped_d, features[0], npoints*nfeatures*sizeof(float), cudaMemcpyHostToDevice);
 	cudaMalloc((void**) &feature_d, npoints*nfeatures*sizeof(float));
-		
+	
+	
+	StopWatchInterface *timer=NULL;
+	sdkCreateTimer(&timer);
+	sdkResetTimer(&timer);
+	sdkStartTimer(&timer);	
 	/* invert the data array (kernel execution) */	
+	for(int ii=0;ii<niter;ii++){	
 	invert_mapping<<<num_blocks,num_threads>>>(feature_flipped_d,feature_d,npoints,nfeatures);
-		
+	}
+	cudaDeviceSynchronize();
+	sdkStopTimer(&timer);
+	double gtime = sdkGetTimerValue(&timer)/niter;
+	printf("k1 %f %f\n",gtime*niter,gtime);
+	FILE* timefile = fopen("time_kmeans_k1.txt","a+");
+	fprintf(timefile,"%f \n",gtime);
+	fclose(timefile);
+	sdkDeleteTimer(&timer);
+	
 	/* allocate memory for membership_d[] and clusters_d[][] (device) */
 	cudaMalloc((void**) &membership_d, npoints*sizeof(int));
 	cudaMalloc((void**) &clusters_d, nclusters*nfeatures*sizeof(float));
@@ -132,7 +147,10 @@ main( int argc, char** argv)
 	// make sure we're running on the big card
     cudaSetDevice(1);
 	// as done in the CUDA start/help document provided
-	setup(argc, argv);    
+	setup(argc, argv);   
+	sleep(1); 
+	
+	
 }
 
 //																			  //
@@ -197,15 +215,17 @@ kmeansCuda(float  **feature,				/* in: [npoints][nfeatures] */
 	   changed to 2d (source code on NVIDIA CUDA Programming Guide) */
     dim3  grid( num_blocks_perdim, num_blocks_perdim );
     dim3  threads( num_threads_perdim*num_threads_perdim );
-    
+    	
+	
+	usleep(50000);
 	StopWatchInterface *timer=NULL;
 	sdkCreateTimer(&timer);
 	sdkResetTimer(&timer);
 	sdkStartTimer(&timer);
 
-	for(int inner=0;inner<niter;inner++){
+	for(int inner=0;inner<2*niter;inner++){
 	/* execute the kernel */
-    kmeansPoint<<< grid, threads >>>( feature_d,
+    	kmeansPoint<<< grid, threads >>>( feature_d,
                                       nfeatures,
                                       npoints,
                                       nclusters,
@@ -218,10 +238,12 @@ kmeansCuda(float  **feature,				/* in: [npoints][nfeatures] */
 	cudaDeviceSynchronize();
 	sdkStopTimer(&timer);
 	double gtime = sdkGetTimerValue(&timer)/niter;
-	FILE* timefile = fopen("time_kmeans.txt","a+");
+	printf("k0 %f %f\n",gtime*niter,gtime);
+	FILE* timefile = fopen("time_kmeans_k0.txt","a+");
 	fprintf(timefile,"%f \n",gtime);
 	fclose(timefile);
 	sdkDeleteTimer(&timer);
+	
 	/* copy back membership (device to host) */
 	cudaMemcpy(membership_new, membership_d, npoints*sizeof(int), cudaMemcpyDeviceToHost);	
 

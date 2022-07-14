@@ -12,7 +12,7 @@ NVCC_FLAGS = -I$(CUDA_DIR)/include  -I../../common/inc
 ifeq ($(dbg),1)
 	NVCC_FLAGS += -g -O0
 else
-	NVCC_FLAGS += -O2 -w
+	NVCC_FLAGS += -O2 
 endif
 
 # 'make emu=1' compiles the CUDA kernels for emulation
@@ -22,8 +22,7 @@ endif
 
 
 backprop: backprop.o facetrain.o imagenet.o backprop_cuda.o 
-	$(CC) $(CC_FLAGS) backprop.o facetrain.o imagenet.o backprop_cuda.o -o backprop -L$(CUDA_LIB_DIR)  -lcuda -lcudart -lm
-
+	$(CC) $(CC_FLAGS) backprop.o facetrain.o imagenet.o backprop_cuda.o -o backprop -L$(CUDA_LIB_DIR) -lcudart -lm 
 %.o: %.[ch]
 	$(CC) $(CC_FLAGS) $< -c
 
