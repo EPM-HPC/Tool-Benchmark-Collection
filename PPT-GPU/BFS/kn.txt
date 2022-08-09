@@ -1,0 +1,172 @@
+------------- NVBit (NVidia Binary Instrumentation Tool v1.5.5) Loaded --------------
+NVBit core environment variables (mostly for nvbit-devs):
+            NVDISASM = nvdisasm - override default nvdisasm found in PATH
+            NOBANNER = 0 - if set, does not print this banner
+---------------------------------------------------------------------------------
+         INSTR_BEGIN = 0 - Beginning of the instruction interval where to apply instrumentation
+           INSTR_END = 4294967295 - End of the instruction interval where to apply instrumentation
+       MANGLED_NAMES = 1 - Print Kernel names mangled or not
+----------------------------------------------------------------------------------------------------
+Reading File
+Read File
+ctx_init
+
+Copied Everything to GPU memory
+Start traversing the tree
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #1
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #2
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #3
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #4
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #5
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #6
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #7
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #8
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #9
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #10
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #11
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #12
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #13
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #14
+
+......
+cuCtxSynchronize##
+
+exit...
+cuLaunchKernel _Z6KernelP4NodePiPbS2_S2_S1_i
+
+Kernel #15
+
+......
+cuCtxSynchronize##
+
+exit...
+host 1 done
+cuCtxSynchronize##
+
+cuLaunchKernel _Z7Kernel2PbS_S_S_i
+
+Kernel #16
+
+......
+cuCtxSynchronize##
+
+exit...
+Kernel Executed 8 times
+Result stored in result.txt
+ctx_term
+
+--> sass + memory traces are collected for 16 kernels

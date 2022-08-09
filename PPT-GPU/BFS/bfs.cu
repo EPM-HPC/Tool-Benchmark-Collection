@@ -21,6 +21,9 @@
 #include <math.h>
 #include <cuda.h>
 
+#include <helper_functions.h>   // helper functions for string parsing
+#include <helper_cuda.h>        // helper functions CUDA error checking and initialization
+
 #define MAX_THREADS_PER_BLOCK 512
 
 int no_of_nodes;
@@ -181,6 +184,18 @@ void BFSGraph( int argc, char** argv)
 	int k=0;
 	printf("Start traversing the tree\n");
 	bool stop;
+
+
+
+
+	StopWatchInterface *hTimer = NULL;
+   	findCudaDevice(argc, (const char **)argv);
+    	sdkCreateTimer(&hTimer);
+    	checkCudaErrors(cudaDeviceSynchronize());
+    	sdkResetTimer(&hTimer);
+    	sdkStartTimer(&hTimer);
+
+
 	//Call the Kernel untill all the elements of Frontier are not false
 	do
 	{
@@ -190,7 +205,8 @@ void BFSGraph( int argc, char** argv)
 		Kernel<<< grid, threads, 0 >>>( d_graph_nodes, d_graph_edges, d_graph_mask, d_updating_graph_mask, d_graph_visited, d_cost, no_of_nodes);
 		// check if kernel execution generated and error
 		
-
+		
+		cudaDeviceSynchronize();
 		Kernel2<<< grid, threads, 0 >>>( d_graph_mask, d_updating_graph_mask, d_graph_visited, d_over, no_of_nodes);
 		// check if kernel execution generated and error
 		
@@ -199,9 +215,13 @@ void BFSGraph( int argc, char** argv)
 		k++;
 	}
 	while(stop);
+	
+	checkCudaErrors(cudaDeviceSynchronize());
+    	sdkStopTimer(&hTimer);
+    	double gpuTime = sdkGetTimerValue(&hTimer);
 
 
-	printf("Kernel Executed %d times\n",k);
+	printf("%lf ms,Kernel Executed %d times\n",gpuTime,k);
 
 	// copy result from device to host
 	cudaMemcpy( h_cost, d_cost, sizeof(int)*no_of_nodes, cudaMemcpyDeviceToHost) ;

@@ -1,0 +1,1 @@
+/usr/local/cuda/bin/nvcc -arch=sm_70 bfs.cu -o bfs -I/usr/local/cuda/include -I../util -I/usr/local/cuda/samples/common/inc  -L/usr/local/cuda/lib64 -DTIMING -lcudart 

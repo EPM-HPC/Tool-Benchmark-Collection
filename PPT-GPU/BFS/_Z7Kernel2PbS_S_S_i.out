@@ -1,0 +1,33 @@
+--
+ld.param.u32 %r2 [_Z7Kernel2PbS_S_S_i_param_4]
+mov.u32 %r3 %ctaid.x
+shl.b32 %r4 %r3 9
+mov.u32 %r5 %tid.x
+add.s32 %r1 %r4 %r5
+setp.ge.s32 %p1 %r1 %r2
+bra LBB7_3
+--
+ld.param.u64 %rd10 [_Z7Kernel2PbS_S_S_i_param_1]
+cvta.to.global.u64 %rd3 %rd10
+cvt.s64.s32 %rd12 %r1
+add.s64 %rd5 %rd3 %rd12
+ld.global.u8 %rs1 [..%rd5..]
+setp.eq.s16 %p2 %rs1 0
+bra LBB7_3
+--
+ld.param.u64 %rd8 [_Z7Kernel2PbS_S_S_i_param_0]
+ld.param.u64 %rd9 [_Z7Kernel2PbS_S_S_i_param_3]
+cvta.to.global.u64 %rd1 %rd9
+ld.param.u64 %rd11 [_Z7Kernel2PbS_S_S_i_param_2]
+cvta.to.global.u64 %rd2 %rd11
+cvta.to.global.u64 %rd4 %rd8
+add.s64 %rd6 %rd2 %rd12
+add.s64 %rd7 %rd4 %rd12
+mov.u16 %rs2 1
+st.global.u8 [..%rd7..] %rs2
+st.global.u8 [..%rd6..] %rs2
+st.global.u8 [..%rd1..] %rs2
+mov.u16 %rs3 0
+st.global.u8 [..%rd5..] %rs3
+--
+ret
